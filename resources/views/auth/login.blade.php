@@ -13,7 +13,7 @@
     <form method="POST" action="{{ route('login') }}">
       {{ csrf_field() }}
       <div class="form-group has-feedback">
-        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" value="johndoe@test.com" required autofocus>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 
         @if ($errors->has('email'))
@@ -24,7 +24,7 @@
 
       </div>
       <div class="form-group has-feedback">
-        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="secret" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
 
         @if ($errors->has('password'))
