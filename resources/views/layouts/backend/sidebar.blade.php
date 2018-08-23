@@ -43,6 +43,8 @@
           </ul>
         </li>
 
+        
+
         @if (check_user_permissions(request(), "Categories@index"))
         <li>
           <a href="{{ route('categories.index') }}">
@@ -50,14 +52,25 @@
           </a>
         </li>
         @endif
-
-        @if (check_user_permissions(request(), "Users@index"))
-        <li>
-          <a href="{{ route('users.index') }}">
-            <i class="fa fa-users"></i> <span>Users</span>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-users"></i> <span>User Permission</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i>Role Menu</a></li>
+            <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i>Permession Menu</a></li>
+            @if (check_user_permissions(request(), "Users@index"))
+              <li>
+                <a href="{{ route('users.index') }}">
+                  <i class="fa fa-circle-o"></i> <span>Users</span>
+                </a>
+              </li>
+            @endif
+          </ul>
         </li>
-        @endif
 
       </ul>
     </section>
