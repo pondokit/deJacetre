@@ -23,14 +23,15 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
+      
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
+        <li class=" {{ request()->is('home') ? 'active' : '' }} " >
           <a href="/home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview">
+        <li class="treeview {{ ( request()->is('backend/blog') || request()->is('backend/blog/create') ) ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-book"></i> <span>Blog</span>
             <span class="pull-right-container">
@@ -38,21 +39,25 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a></li>
-            <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a></li>
+            <li class=" {{ request()->is('backend/blog') ? 'active' : '' }} ">
+              <a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a>
+            </li>
+            <li class=" {{ request()->is('backend/blog/create') ? 'active' : '' }} ">
+              <a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a>
+            </li>
           </ul>
         </li>
 
         
 
         @if (check_user_permissions(request(), "Categories@index"))
-        <li>
+        <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
           </a>
         </li>
         @endif
-        <li class="treeview">
+        <li class="treeview {{ ( request()->is('backend/role') || request()->is('backend/permission') || request()->is('backend/users') ) ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i> <span>User Permission</span>
             <span class="pull-right-container">
@@ -60,10 +65,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i>Role Menu</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a></li>
+            <li class=" {{ request()->is('backend/role') ? 'active' : '' }} ">
+              <a href="#"><i class="fa fa-circle-o"></i>Role Menu</a>
+            </li>
+            <li class=" {{ request()->is('backend/permission') ? 'active' : '' }} ">
+              <a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a>
+            </li>
             @if (check_user_permissions(request(), "Users@index"))
-              <li>
+              <li class=" {{ request()->is('backend/users') ? 'active' : '' }} ">
                 <a href="{{ route('users.index') }}">
                   <i class="fa fa-circle-o"></i> <span>Users</span>
                 </a>
