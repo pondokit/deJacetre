@@ -67,6 +67,8 @@ Route::resource('/backend/blog', 'Backend\BlogController');
 
 Route::resource('/backend/categories', 'Backend\CategoriesController');
 
+Route::resource('/backend/roles', 'Backend\RolesController');
+
 Route::get('/backend/users/confirm/{user}', [
 	'uses'	=> 'Backend\UsersController@confirm',
 	'as'	=> 'users.confirm'
