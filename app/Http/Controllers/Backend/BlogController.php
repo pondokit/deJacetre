@@ -102,8 +102,17 @@ class BlogController extends BackendController
                 return $post->category->title;
             })
             ->addColumn('label', function($post) {
-                return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr> | ".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
+                return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'></abbr>".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
             })
+            ->addColumn('date', function($post) {
+                return $post->dateFormatted(true);
+            })
+            // ->addColumn('label', function($post) {
+            //     return $post->dateFormatted();
+            // })
+            // ->addColumn('status', function($post) {
+            //     return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'></abbr>".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
+            // })
             ->addColumn('view', function($post) {
                 return $post->view_count;
             })

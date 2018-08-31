@@ -5,6 +5,7 @@
 		<th width="120">Author</th>
 		<th width="150">Category</th>
 		<th width="170">Date</th>
+		<th width="170">Status</th>
 		<th>View Count</th>
 	</thead>
 </table>
