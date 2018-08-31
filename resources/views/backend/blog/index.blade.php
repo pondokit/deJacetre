@@ -77,6 +77,7 @@
         $('#posts-table').DataTable({
             processing: true,
             serverSide: true,
+            order: [[1, 'asc']],
             ajax: '{!! route('blog.data') !!}',
             columns: [
                 { data: 'action', name: 'action', orderable: false, searchable: false },
