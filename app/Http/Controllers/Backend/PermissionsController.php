@@ -22,21 +22,6 @@ class PermissionsController extends BackendController
         return view('backend.permissions.index', compact('permissions'));
     }
 
-    public function data()
-    {
-        // $categories = Category::with('posts');
-        
-        // return Datatables::of($categories)
-        //         ->addColumn('action', function($category) {
-        //             $delete_button  = ($category->id == config('cms.default_category_id')) ? '<button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>' : '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
-
-        //             return '<form action="'.route('categories.destroy', $category->id).'" method="post">' . csrf_field() . method_field("DELETE") . '<a href="'.route('categories.edit', $category->id).'" class="btn btn-xs btn-default"><i class="fa fa-edit"></i></a>'. $delete_button .'</form>';
-        //         })
-        //         ->addColumn('post_count', function($category) {
-        //             return $category->posts->count();
-        //         })
-        //         ->make(true);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -83,8 +68,8 @@ class PermissionsController extends BackendController
      */
     public function edit($id)
     {
-        // $category = Category::findOrFail($id);
-        // return view('backend.categories.edit', compact('category'));
+        $permission = Permission::findOrFail($id);
+        return view('backend.permissions.edit', compact('permission'));
     }
 
     /**
@@ -94,13 +79,13 @@ class PermissionsController extends BackendController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\CategoryUpdateRequest $request, $id)
+    public function update(Requests\PermissionUpdateRequest $request, $id)
     {
-        // Category::findOrFail($id)->update($request->all());
+        Permission::findOrFail($id)->update($request->all());
 
-        // Toastr::success('Category was updated successfully!', 'Update Category');
+        Toastr::success('Permission was updated successfully!', 'Update Permission');
 
-        // return redirect('backend/categories');
+        return redirect('backend/permissions');
     }
 
     /**
