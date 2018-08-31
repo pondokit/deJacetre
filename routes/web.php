@@ -87,3 +87,5 @@ Route::get('/blog-data', [
 	'uses'	=> 'Backend\BlogController@data',
 	'as'	=> 'blog.data'
 ]);
+
+Route::resource('backend/permissions', 'Backend\PermissionsController');
