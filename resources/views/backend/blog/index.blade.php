@@ -44,7 +44,7 @@
             <i class="fa fa-minus"></i></button>
           <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
             <i class="fa fa-times"></i></button> -->
-          
+
         </div>
       </div>
       <!-- /.box-header -->
@@ -84,6 +84,7 @@
                 { data: 'author', name: 'author' },
                 { data: 'category', name: 'category' },
                 { data: 'label', name: 'label' },
+                { data: 'view', name: 'view' },
             ]
         });
     });

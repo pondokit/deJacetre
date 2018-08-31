@@ -70,12 +70,12 @@ class BlogController extends BackendController
 
         return Datatables::of($posts)
             ->addColumn('action', function($post) {
-                
+
                 $request = request();
 
                 if (session('status') == 'trash') {
 
-                    $edit_button = (check_user_permissions($request, "Blog@restore", $post->id)) ? '<button title="Restore" class="btn btn-xs btn-default"><i class="fa fa-refresh"></i></button>' : '<button title="Restore" onclick="return false" class="btn btn-xs btn-default disabled"><i class="fa fa-refresh"></i></button>'; 
+                    $edit_button = (check_user_permissions($request, "Blog@restore", $post->id)) ? '<button title="Restore" class="btn btn-xs btn-default"><i class="fa fa-refresh"></i></button>' : '<button title="Restore" onclick="return false" class="btn btn-xs btn-default disabled"><i class="fa fa-refresh"></i></button>';
 
                     $delete_button  = (check_user_permissions($request, "Blog@forceDestroy", $post->id)) ? '<button title="Delete Permanent" onclick="return confirm('."You are about to delete a post permanently. Are you sure?".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>' : '<button title="Delete Permanent" onclick="return false" type="button" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>';
 
@@ -87,7 +87,7 @@ class BlogController extends BackendController
 
                 } else {
 
-                    $edit_button = (check_user_permissions($request, "Blog@edit", $post->id)) ? '<a href="' . route('blog.edit', $post->id) . '" class="btn btn-xs btn-default"><i class="fa fa-edit"></i></a>' : '<button class="btn btn-xs btn-default disabled"><i class="fa fa-edit"></i></button>'; 
+                    $edit_button = (check_user_permissions($request, "Blog@edit", $post->id)) ? '<a href="' . route('blog.edit', $post->id) . '" class="btn btn-xs btn-default"><i class="fa fa-edit"></i></a>' : '<button class="btn btn-xs btn-default disabled"><i class="fa fa-edit"></i></button>';
 
                     $delete_button  = (check_user_permissions($request, "Blog@destroy", $post->id)) ? '<button type="submit" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></button>' : '<button type="button" onclick="return false" class="btn btn-xs btn-danger disabled"><i class="fa fa-trash"></i></button>';
 
@@ -103,6 +103,9 @@ class BlogController extends BackendController
             })
             ->addColumn('label', function($post) {
                 return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr> | ".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
+            })
+            ->addColumn('view', function($post) {
+                return $post->view_count;
             })
             ->make(true);
     }
@@ -210,7 +213,7 @@ class BlogController extends BackendController
         } else {
             unset($request['published_at']);
         }
-        
+
         $post = Post::findOrFail($id);
         $oldImage = $post->image;
         $data = $this->handleRequest($request);
