@@ -83,6 +83,7 @@
                 { data: 'title', name: 'title' },
                 { data: 'author', name: 'author' },
                 { data: 'category', name: 'category' },
+                { data: 'date', name: 'date' },
                 { data: 'label', name: 'label' },
                 { data: 'view', name: 'view' },
             ]
