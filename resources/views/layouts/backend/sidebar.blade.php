@@ -61,7 +61,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i>Role Menu</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a></li>
+            <li><a href="{{ route('permissions.index') }}"><i class="fa fa-circle-o"></i>Permession Menu</a></li>
             @if (check_user_permissions(request(), "Users@index"))
               <li>
                 <a href="{{ route('users.index') }}">
