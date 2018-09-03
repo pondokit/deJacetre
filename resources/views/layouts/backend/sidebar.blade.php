@@ -1,3 +1,7 @@
+<?php
+$url2 = request()->segment(2);
+$url1 = request()->segment(1);
+?>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -23,15 +27,15 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      
+
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class=" {{ request()->is('home') ? 'active' : '' }} " >
+        <li class=" {{ $url1 == 'home' ? 'active' : '' }} " >
           <a href="/home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview {{ ( request()->is('backend/blog') || request()->is('backend/blog/create') ) ? 'active' : '' }}">
+        <li class="treeview {{ $url2 == 'blog' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-book"></i> <span>Blog</span>
             <span class="pull-right-container">
@@ -39,25 +43,25 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=" {{ request()->is('backend/blog') ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
               <a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a>
             </li>
-            <li class=" {{ request()->is('backend/blog/create') ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
               <a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a>
             </li>
           </ul>
         </li>
 
-        
+
 
         @if (check_user_permissions(request(), "Categories@index"))
-        <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
+        <li class="{{ $url2 == 'categories' ? 'active' : '' }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
           </a>
         </li>
         @endif
-        <li class="treeview {{ ( request()->is('backend/role') || request()->is('backend/permission') || request()->is('backend/users') ) ? 'active' : '' }}">
+        <li class="treeview {{ $url2 == 'users' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i> <span>User Permission</span>
             <span class="pull-right-container">
@@ -65,14 +69,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=" {{ request()->is('backend/role') ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
               <a href="#"><i class="fa fa-circle-o"></i>Role Menu</a>
             </li>
-            <li class=" {{ request()->is('backend/permission') ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
               <a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a>
             </li>
             @if (check_user_permissions(request(), "Users@index"))
-              <li class=" {{ request()->is('backend/users') ? 'active' : '' }} ">
+              <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
                 <a href="{{ route('users.index') }}">
                   <i class="fa fa-circle-o"></i> <span>Users</span>
                 </a>
