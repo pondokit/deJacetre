@@ -46,18 +46,18 @@
           <span class="help-block">{{ $errors->first('password_confirmation') }}</span>
         @endif
       </div>
-      <div class="form-group {{ $errors->has('role') ? 'has-error' : '' }}">
-        {!! Form::label('role') !!}
+      <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
+        {!! Form::label('roles') !!}
 
         @if ($user->exists && ($user->id == config('cms.default_user_id')) || isset($hideRoleDropdown))
-          {!! Form::hidden('role', $user->roles->first()->id) !!}
-          <p class="form-control-static">{{ $user->roles->first()->display_name }}</p>
+          {!! Form::hidden('roles', $role_name) !!}
+          <p class="form-control-static">{{ implode(", ", $role_name) }}</p>
         @else
-          {!! Form::select('role', App\Role::pluck('display_name','id'), $user->exists ? $user->roles->first()->id : null, ['class' => 'form-control', 'placeholder' => 'Choose a role', 'style' => 'cursor:pointer;']) !!}
+          {!! Form::select('roles', App\Role::pluck('display_name','id'), $user->exists ? $role_id : null, ['name' => 'roles[]', 'class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'cursor:pointer;']) !!}
         @endif
 
-        @if ($errors->has('role'))
-          <span class="help-block">{{ $errors->first('role') }}</span>
+        @if ($errors->has('roles'))
+          <span class="help-block">{{ $errors->first('roles') }}</span>
         @endif
       </div>
       <div class="form-group">

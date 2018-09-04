@@ -89,3 +89,8 @@ Route::get('/blog-data', [
 	'uses'	=> 'Backend\BlogController@data',
 	'as'	=> 'blog.data'
 ]);
+
+Route::get('/roles-data', [
+	'uses'	=> 'Backend\RolesController@data',
+	'as'	=> 'roles.data'
+]);

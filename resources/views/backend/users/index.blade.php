@@ -29,7 +29,7 @@
           <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
-          
+
         </div>
       </div>
       <!-- /.box-header -->
@@ -63,8 +63,8 @@
                 { data: 'action', name: 'action', orderable: false, searchable: false },
                 { data: 'name', name: 'name' },
                 { data: 'email', name: 'email' },
+                { data: 'roles', name: 'roles' },
                 { data: 'post_count', name: 'post_count' },
-                { data: 'role', name: 'role' }
             ]
         });
     });

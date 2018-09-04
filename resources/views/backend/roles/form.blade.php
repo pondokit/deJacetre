@@ -14,6 +14,15 @@
           <span class="help-block">{{ $errors->first('name') }}</span>
         @endif
       </div>
+      <div class="form-group {{ $errors->has('permissions') ? 'has-error' : '' }}">
+        {!! Form::label('permissions') !!}
+
+        {!! Form::select('permissions', App\Permission::pluck('name','id'), $role->exists ? $permission_id : null, ['name' => 'permissions[]', 'class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'cursor:pointer;']) !!}
+
+        @if ($errors->has('permissions'))
+          <span class="help-block">{{ $errors->first('permissions') }}</span>
+        @endif
+      </div>
       <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
         {!! Form::label('description') !!}
         {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '5']) !!}
@@ -33,3 +42,5 @@
   </div>
   <!-- /.box -->
 </div>
+
+@include('backend.roles.script')

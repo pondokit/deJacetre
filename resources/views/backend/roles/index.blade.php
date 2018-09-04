@@ -48,7 +48,7 @@
   <!-- /.content -->
 </div>
 @endsection
-{{--
+
 @section('script')
 	<script type="text/javascript">
 		$('ul.pagination').addClass('pagination-sm no-margin');
@@ -61,11 +61,11 @@
                 ajax: '{!! route('roles.data') !!}',
                 columns: [
                     { data: 'action', name: 'action', orderable: false, searchable: false },
-                    { data: 'title', name: 'title' },
-                    { data: 'post_count', name: 'post_count' }
+                    { data: 'display_name', name: 'display_name' },
+                    { data: 'permissions', name: 'permissions' },
+                    { data: 'user_count', name: 'user_count' },
                 ]
             });
         });
 	</script>
 @endsection
---}}

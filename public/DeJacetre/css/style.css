@@ -55,12 +55,16 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default .navbar-nav>li>a:hover {
 	color: #E13138;
 }
-.navbar .container-fluid {
-	padding: 0 70px;
+.navbar-default .navbar-nav li:first-child a {
+	padding-left: 0;
+}
+.navbar .container {
+	padding: 0;
 }
 .navbar-form {
 	margin: 0;
 	padding-top: 13px;
+	padding-right: 0;
 }
 .navbar-form input {
 	border: 0;
@@ -251,10 +255,10 @@ h1, h2, h3, h4, h5, h6 {
 	color: #fff;
 	width: 25px;
 	height: 25px;
-	padding-top: 2px; 
+	padding-top: 2px;
 	text-align: center;
 	font-size: 15px;
-	margin-left: 5px; 
+	margin-left: 5px;
 }
 #content .extra a:nth-child(2) {
 	background: blue;
@@ -307,7 +311,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 70px;
 	background: #aaa;
 	border-radius: 50%;
-	overflow: hidden; 
+	overflow: hidden;
 }
 .media .media-image img {
 	width: 200%;
@@ -347,14 +351,14 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.5;
 }
 #comment h3 {
-	margin-bottom: 30px; 
+	margin-bottom: 30px;
 }
 #comment .media .media-image {
 	width: 60px;
 	height: 60px;
 }
 #comment .media-caption h4 {
-	margin-top: 10px; 
+	margin-top: 10px;
 }
 #comment .media {
 	border-bottom: 1px solid #ddd;
@@ -384,8 +388,8 @@ h1, h2, h3, h4, h5, h6 {
 #footer .company:hover a {
 	color: #E13138;
 }
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
 	background: none;
 	color: #E13138;
@@ -398,20 +402,20 @@ h1, h2, h3, h4, h5, h6 {
 .pager span {
 	border-radius: 0px !important;
 }
-.pagination>.active>a, 
-.pagination>.active>a:focus, 
-.pagination>.active>a:hover, 
-.pagination>.active>span, 
-.pagination>.active>span:focus, 
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
 .pagination>.active>span:hover {
 	background: #E13138;
 	border-color: #E13138;
 }
-.pagination>li>a, 
-.pagination>li>a:focus, 
-.pagination>li>a:hover, 
-.pagination>li>span, 
-.pagination>li>span:focus, 
+.pagination>li>a,
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span,
+.pagination>li>span:focus,
 .pagination>li>span:hover {
 	color: #E13138;
 }

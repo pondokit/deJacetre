@@ -25,6 +25,7 @@ class RoleUpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255|unique:roles,name,'.$this->route('role'),
+            'permissions' => 'required',
         ];
     }
 }

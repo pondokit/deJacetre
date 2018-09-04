@@ -24,7 +24,7 @@ class CategoriesController extends BackendController
     public function data()
     {
         $categories = Category::with('posts');
-        
+
         return Datatables::of($categories)
                 ->addColumn('action', function($category) {
                     $delete_button  = ($category->id == config('cms.default_category_id')) ? '<button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>' : '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
@@ -111,7 +111,7 @@ class CategoriesController extends BackendController
     public function destroy(Requests\CategoryDestroyRequest $request, $id)
     {
         Post::withTrashed()->where('category_id', $id)->update(['category_id' => config('cms.default_category_id')]);
-        
+
         $category = Category::findOrFail($id);
         $category->delete();
 
