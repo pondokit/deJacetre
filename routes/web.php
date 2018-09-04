@@ -89,3 +89,7 @@ Route::get('/blog-data', [
 ]);
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
+
+Route::get('/backend/tools', 'MaintenanceController@index')->name('tools');
+Route::post('/backend/tools/enable_maintenance_mode', 'MaintenanceController@enableMaintenanceMode')->name('tools.enable_maintenance_mode');
+Route::post('/backend/tools/disable_maintenance_mode', 'MaintenanceController@disableMaintenanceMode')->name('tools.disable_maintenance_mode');
