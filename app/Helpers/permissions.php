@@ -29,7 +29,7 @@ function check_user_permissions($request, $actionName = NULL, $id = NULL)
 	$classesMap = [
 	    'Blog'       => 'post',
 	    'Categories' => 'category',
-	    'Users'      => 'user' 
+	    'Users'      => 'user'
 	];
 
 	foreach ($crudPermissionsMap as $permission => $methods)
@@ -39,16 +39,16 @@ function check_user_permissions($request, $actionName = NULL, $id = NULL)
 	    if (in_array($method, $methods) && isset($classesMap[$controller])) {
 	        $className = $classesMap[$controller];
 
-	        if ($className == 'post' && in_array($method, ['edit', 'update', 'destroy', 'restore', 'forceDestroy'])) 
+	        if ($className == 'post' && in_array($method, ['edit', 'update', 'destroy', 'restore', 'forceDestroy']))
 	        {
 	        	$id = !is_null($id) ? $id : $request->route("blog");
-	        	
+
 	            // if the current user has no update-others-post/delete-others-post permission
 	            // make sure he/she only modify his/her own post
-	            if ($id && (!$currentUser->can('update-others-post') || !$currentUser->can('delete-others-post'))) 
+	            if ($id && (!$currentUser->can('update-others-post') || !$currentUser->can('delete-others-post')))
 	            {
 	                $post = \App\Post::withTrashed()->find($id);
-	                if ($post->author_id !== $currentUser->id) 
+	                if ($post->author_id !== $currentUser->id)
 	                {
 	                    return false;
 	                }

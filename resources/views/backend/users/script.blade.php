@@ -25,7 +25,7 @@
         $('#slug').val(theSlug);
         $('#name').val(theName);
     });
-    
+
     $('#save-btn').click(function(e){
 
         var str = $('#name');
@@ -43,5 +43,9 @@
             $('#user-form').submit();
         }
     });
+
+	$(document).ready(function() {
+	    $('.select2').select2();
+	});
 </script>
 @endsection

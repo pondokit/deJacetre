@@ -67,6 +67,8 @@ Route::resource('/backend/blog', 'Backend\BlogController');
 
 Route::resource('/backend/categories', 'Backend\CategoriesController');
 
+Route::resource('/backend/roles', 'Backend\RolesController');
+
 Route::get('/backend/users/confirm/{user}', [
 	'uses'	=> 'Backend\UsersController@confirm',
 	'as'	=> 'users.confirm'
@@ -89,3 +91,7 @@ Route::get('/blog-data', [
 ]);
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
+Route::get('/roles-data', [
+	'uses'	=> 'Backend\RolesController@data',
+	'as'	=> 'roles.data'
+]);
