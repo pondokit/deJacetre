@@ -96,6 +96,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
             'Laravel\\Socialite\\' => 18,
             'Laratrust\\' => 10,
         ),
+        'J' => 
+        array (
+            'Jorenvh\\Share\\' => 14,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -289,6 +293,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         array (
             0 => __DIR__ . '/..' . '/santigarcor/laratrust/src',
         ),
+        'Jorenvh\\Share\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -423,6 +431,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Controllers\\Backend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BlogController.php',
         'App\\Http\\Controllers\\Backend\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CategoriesController.php',
         'App\\Http\\Controllers\\Backend\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/HomeController.php',
+        'App\\Http\\Controllers\\Backend\\PermissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/PermissionsController.php',
         'App\\Http\\Controllers\\Backend\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/UsersController.php',
         'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
         'App\\Http\\Controllers\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentsController.php',
@@ -441,6 +450,9 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Requests\\CategoryStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CategoryStoreRequest.php',
         'App\\Http\\Requests\\CategoryUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CategoryUpdateRequest.php',
         'App\\Http\\Requests\\CommentStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CommentStoreRequest.php',
+        'App\\Http\\Requests\\PermissionDestroyRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionDestroyRequest.php',
+        'App\\Http\\Requests\\PermissionStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionStoreRequest.php',
+        'App\\Http\\Requests\\PermissionUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionUpdateRequest.php',
         'App\\Http\\Requests\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostRequest.php',
         'App\\Http\\Requests\\UserDestroyRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserDestroyRequest.php',
         'App\\Http\\Requests\\UserStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserStoreRequest.php',
@@ -2163,6 +2175,9 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jorenvh\\Share\\Providers\\ShareServiceProvider' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Providers/ShareServiceProvider.php',
+        'Jorenvh\\Share\\Share' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Share.php',
+        'Jorenvh\\Share\\ShareFacade' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/ShareFacade.php',
         'Laratrust\\Commands\\AddLaratrustUserTraitUseCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/AddLaratrustUserTraitUseCommand.php',
         'Laratrust\\Commands\\MakePermissionCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakePermissionCommand.php',
         'Laratrust\\Commands\\MakeRoleCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakeRoleCommand.php',

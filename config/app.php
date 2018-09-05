@@ -157,7 +157,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
-        
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -226,6 +227,7 @@ return [
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'Share' => Jorenvh\Share\ShareFacade::class,
 
     ],
 

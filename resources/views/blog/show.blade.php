@@ -17,9 +17,9 @@
         <a href="{{ route('category', $post->category->slug) }}" class="category">{{ $post->category->title }}</a>
         <h2 class="title">{{ $post->title }}</h2>
         <p class="info text-muted">
-          <a>{{ $post->date }}</a> <span class="bull">&bullet;</span> 
-          <a href="{{ route('author', $post->author->slug) }}">{{ $post->author->name }}</a> <span class="bull">&bullet;</span> 
-          {!! $post->tags_html !!} <span class="bull">&bullet;</span> 
+          <a>{{ $post->date }}</a> <span class="bull">&bullet;</span>
+          <a href="{{ route('author', $post->author->slug) }}">{{ $post->author->name }}</a> <span class="bull">&bullet;</span>
+          {!! $post->tags_html !!} <span class="bull">&bullet;</span>
           <a href="#comments">{{ $post->commentsNumber('Comment') }}</a>
         </p>
       </div>
@@ -35,9 +35,15 @@
         </div>
         <div class="extra pull-right">
           <p><i class="fa fa-eye"></i> {{ $post->view_count }} {{ str_plural('View', $post->view_count) }}</p>
-          <a href="" title="Share on facebook"><i class="fa fa-facebook"></i></a>
+          <!-- <a href="" title="Share on facebook"><i class="fa fa-facebook"></i></a>
           <a href="" title="Share on twitter"><i class="fa fa-twitter"></i></a>
-          <a href="" title="Share on google"><i class="fa fa-google-plus"></i></a>
+          <a href="" title="Share on google"><i class="fa fa-google-plus"></i></a> -->
+          {!!
+              Share::currentPage()
+                ->facebook()
+                ->twitter()
+                ->googlePlus()
+          !!}
         </div>
       </div>
     </div><!-- Thumbnail Closer -->
@@ -69,4 +75,12 @@
 
 </div><!-- Main Closer -->
 
+@endsection
+
+@section('script')
+<script>
+    $(document).ready(function(){
+        $('.fa-facebook-official').addClass('fa-facebook').removeClass('fa-facebook-official')
+    });
+</script>
 @endsection
