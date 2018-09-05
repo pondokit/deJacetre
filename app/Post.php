@@ -50,7 +50,7 @@ class Post extends Model
 			$imagePath = public_path()."{$directory}".$this->image;
 			if (file_exists($imagePath)) $imageUrl = asset("{$directory}".$this->image);
 		}
-		
+
 		return $imageUrl;
 	}
 
@@ -123,8 +123,8 @@ class Post extends Model
 
 	public static function archives()
 	{
-		return static::selectRaw('count(id) as post_count, 
-									year(published_at) year, 
+		return static::selectRaw('count(id) as post_count,
+									year(published_at) year,
 									monthname(published_at) month')
 						->published()
 						->groupBy('year', 'month')
@@ -137,7 +137,7 @@ class Post extends Model
 		$tags = explode(",", $tagString);
 		$tagIds = [];
 
-		foreach ($tags as $tag) 
+		foreach ($tags as $tag)
 		{
 			$newTag = Tag::firstOrCreate([
 				'slug' => str_slug($tag),

@@ -32,7 +32,7 @@ class UsersController extends BackendController
     public function data()
     {
         $users = User::with('posts');
-        
+
         return Datatables::of($users)
             ->addColumn('action', function($user) {
                 $delete_button  = ($user->id == config('cms.default_user_id') || $user->id == auth()->user()->id) ? '<button onclick="return false" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>' : '<a href="'.route('users.confirm', $user->id).'" onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>';
@@ -42,8 +42,12 @@ class UsersController extends BackendController
             ->addColumn('post_count', function($user) {
                 return $user->posts->count();
             })
-            ->addColumn('role', function($user) {
-                return ($userRole = $user->roles->first()) ? $userRole->display_name : '-';
+            ->addColumn('roles', function($user) {
+                foreach ($user->roles as $role) {
+                    $roles[] = $role->name;
+                }
+
+                return $user->roles->count() !== 0 ? implode(", ", $roles) : "-";
             })
             ->make(true);
     }
@@ -55,8 +59,14 @@ class UsersController extends BackendController
      */
     public function create()
     {
-        $user = new user();
-        return view('backend.users.create', compact('user'));
+        $user = new User();
+
+        foreach ($user->roles as $role) {
+            $role_id[] = $role->id;
+            $role_name[] = $role->display_name;
+        }
+
+        return view('backend.users.create', compact('user', 'role_id', 'role_name'));
     }
 
     /**
@@ -72,7 +82,8 @@ class UsersController extends BackendController
         ]);
 
         $user = User::create($request->all());
-        $user->attachRole($request->role);
+
+        $user->attachRoles($request->roles);
 
         Toastr::success('New user was created successfully!', 'Create User');
 
@@ -99,7 +110,13 @@ class UsersController extends BackendController
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('backend.users.edit', compact('user'));
+
+        foreach ($user->roles as $role) {
+            $role_id[] = $role->id;
+            $role_name[] = $role->display_name;
+        }
+
+        return view('backend.users.edit', compact('user', 'role_id', 'role_name'));
     }
 
     /**
@@ -127,9 +144,9 @@ class UsersController extends BackendController
         if ($id != config('cms.default_user_id'))
         {
             $user->detachRoles();
-            $user->attachRole($request->role);
-        } 
-        elseif ($request->role != 1) 
+            $user->attachRoles($request->role);
+        }
+        elseif ($request->role != 1)
         {
             $message['type'] = 'error';
             $message['msg']  = "You can't change the default user role's";
@@ -151,7 +168,7 @@ class UsersController extends BackendController
         $user = User::findOrFail($id);
         $deleteOption = $request->delete_option;
         $selectedUser = $request->selected_user;
-        
+
         if ($deleteOption == "delete")
         {
             $count = $user->posts()->withTrashed()->count();
@@ -193,6 +210,6 @@ class UsersController extends BackendController
 
             if ( file_exists($imagePath) ) unlink($imagePath);
             if ( file_exists($thumbnailPath) ) unlink($thumbnailPath);
-        } 
+        }
     }
 }

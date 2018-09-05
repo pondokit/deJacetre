@@ -17,7 +17,7 @@
 
 	<!-- Navbar -->
 	<nav id="header" class="navbar navbar-default">
-	  <div class="container-fluid">
+	  <div class="container">
 	    <ul class="nav navbar-nav">
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
 	      <li class="@yield('post')"><a href="#">Blog</a></li>

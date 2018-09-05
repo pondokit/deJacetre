@@ -55,12 +55,16 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default .navbar-nav>li>a:hover {
 	color: #E13138;
 }
-.navbar .container-fluid {
-	padding: 0 70px;
+.navbar-default .navbar-nav li:first-child a {
+	padding-left: 0;
+}
+.navbar .container {
+	padding: 0;
 }
 .navbar-form {
 	margin: 0;
 	padding-top: 13px;
+	padding-right: 0;
 }
 .navbar-form input {
 	border: 0;
@@ -258,6 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 15px;
 	border-radius: 50%;
 	padding-top: 2px;
+
 }
 #content .extra div>ul>li:first-child a {
 	background: blue;

@@ -61,6 +61,7 @@ $url1 = request()->segment(1);
           </a>
         </li>
         @endif
+        @if (check_user_permissions(request(), "Users@index"))
         <li class="treeview {{ $url2 == 'users' ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-users"></i> <span>User Permission</span>
@@ -70,20 +71,19 @@ $url1 = request()->segment(1);
           </a>
           <ul class="treeview-menu">
             <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
-              <a href="#"><i class="fa fa-circle-o"></i>Role Menu</a>
+              <a href="{{ route('roles.index') }}"><i class="fa fa-circle-o"></i>Role Menu</a>
             </li>
             <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
               <a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a>
             </li>
-            @if (check_user_permissions(request(), "Users@index"))
-              <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
-                <a href="{{ route('users.index') }}">
-                  <i class="fa fa-circle-o"></i> <span>Users</span>
-                </a>
-              </li>
-            @endif
+            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
+              <a href="{{ route('users.index') }}">
+                <i class="fa fa-circle-o"></i> <span>Users</span>
+              </a>
+            </li>
           </ul>
         </li>
+        @endif
 
       </ul>
     </section>

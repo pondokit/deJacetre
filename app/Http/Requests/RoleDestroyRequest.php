@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Session;
 
-class UserUpdateRequest extends FormRequest
+class RoleDestroyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,17 @@ class UserUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return !($this->route('role') == config('cms.default_role_id'));
+    }
+
+    public function failedAuthorization()
+    {
+        Session::put('page',[
+            'name'  => 'roles',
+            'title' => 'role'
+        ]);
+
+        abort(403);
     }
 
     /**
@@ -24,11 +35,7 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  => 'required',
-            'email' => 'required|email|unique:users,email,'.$this->route('user'),
-            'password'  => 'required_with:password_confirmation|confirmed',
-            'slug'  => 'required|unique:users,slug,'.$this->route('user'),
-            'roles'  => 'required'
+            //
         ];
     }
 }

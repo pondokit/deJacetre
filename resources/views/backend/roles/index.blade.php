@@ -1,19 +1,19 @@
 @extends('layouts.backend.main')
 
-@section('title','Labaru | Users')
+@section('title','Labaru | Roles')
 
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Users
-      <small>Display all users</small>
+      Roles
+      <small>Display all roles</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('users.index') }}">Users</a></li>
-      <li class="active">All Users</li>
+      <li><a href="{{ route('roles.index') }}">Roles</a></li>
+      <li class="active">All Roles</li>
     </ol>
   </section>
 
@@ -26,7 +26,7 @@
     	<!-- box-header -->
       <div class="box-header with-border clearfix">
         <div class="pull-left">
-          <a href="{{ route('users.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+          <a href="{{ route('roles.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
 
@@ -37,7 +37,7 @@
       <!-- box-body -->
       <div class="box-body">
         @include('backend.partials.message')
-        @include('backend.users.table')
+        @include('backend.roles.table')
       </div>
       <!-- /.box-body -->
 
@@ -53,20 +53,19 @@
 	<script type="text/javascript">
 		$('ul.pagination').addClass('pagination-sm no-margin');
 
-    $(function() {
-        $('#users-table').DataTable({
-            processing: true,
-            serverSide: true,
-            order: [[1, 'asc']],
-            ajax: '{!! route('users.data') !!}',
-            columns: [
-                { data: 'action', name: 'action', orderable: false, searchable: false },
-                { data: 'name', name: 'name' },
-                { data: 'email', name: 'email' },
-                { data: 'roles', name: 'roles' },
-                { data: 'post_count', name: 'post_count' },
-            ]
+        $(function() {
+            $('#roles-table').DataTable({
+                processing: true,
+                serverSide: true,
+                order: [[1, 'asc']],
+                ajax: '{!! route('roles.data') !!}',
+                columns: [
+                    { data: 'action', name: 'action', orderable: false, searchable: false },
+                    { data: 'display_name', name: 'display_name' },
+                    { data: 'permissions', name: 'permissions' },
+                    { data: 'user_count', name: 'user_count' },
+                ]
+            });
         });
-    });
 	</script>
 @endsection
