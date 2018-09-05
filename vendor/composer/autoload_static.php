@@ -19,6 +19,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'caf23243e9cb3afd48d0414815ebf07e' => __DIR__ . '/..' . '/brian2694/laravel-toastr/src/helper.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
@@ -65,6 +66,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Stringy\\' => 8,
         ),
         'R' => 
         array (
@@ -92,6 +94,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
             'League\\OAuth1\\' => 14,
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
+            'Laravolt\\Avatar\\' => 16,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\Socialite\\' => 18,
             'Laratrust\\' => 10,
@@ -229,6 +232,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Stringy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -276,6 +283,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'League\\CommonMark\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/commonmark/src',
+        ),
+        'Laravolt\\Avatar\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravolt/avatar/src',
         ),
         'Laravel\\Tinker\\' => 
         array (
@@ -423,6 +434,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Controllers\\Backend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BlogController.php',
         'App\\Http\\Controllers\\Backend\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CategoriesController.php',
         'App\\Http\\Controllers\\Backend\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/HomeController.php',
+        'App\\Http\\Controllers\\Backend\\PermissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/PermissionsController.php',
         'App\\Http\\Controllers\\Backend\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/UsersController.php',
         'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
         'App\\Http\\Controllers\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentsController.php',
@@ -441,6 +453,9 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Requests\\CategoryStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CategoryStoreRequest.php',
         'App\\Http\\Requests\\CategoryUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CategoryUpdateRequest.php',
         'App\\Http\\Requests\\CommentStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CommentStoreRequest.php',
+        'App\\Http\\Requests\\PermissionDestroyRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionDestroyRequest.php',
+        'App\\Http\\Requests\\PermissionStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionStoreRequest.php',
+        'App\\Http\\Requests\\PermissionUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PermissionUpdateRequest.php',
         'App\\Http\\Requests\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostRequest.php',
         'App\\Http\\Requests\\UserDestroyRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserDestroyRequest.php',
         'App\\Http\\Requests\\UserStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserStoreRequest.php',
@@ -2218,6 +2233,12 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravolt\\Avatar\\Avatar' => __DIR__ . '/..' . '/laravolt/avatar/src/Avatar.php',
+        'Laravolt\\Avatar\\Facade' => __DIR__ . '/..' . '/laravolt/avatar/src/Facade.php',
+        'Laravolt\\Avatar\\Generator\\DefaultGenerator' => __DIR__ . '/..' . '/laravolt/avatar/src/Generator/DefaultGenerator.php',
+        'Laravolt\\Avatar\\Generator\\GeneratorInterface' => __DIR__ . '/..' . '/laravolt/avatar/src/Generator/GeneratorInterface.php',
+        'Laravolt\\Avatar\\LumenServiceProvider' => __DIR__ . '/..' . '/laravolt/avatar/src/LumenServiceProvider.php',
+        'Laravolt\\Avatar\\ServiceProvider' => __DIR__ . '/..' . '/laravolt/avatar/src/ServiceProvider.php',
         'League\\CommonMark\\Block\\Element\\AbstractBlock' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/AbstractBlock.php',
         'League\\CommonMark\\Block\\Element\\BlockQuote' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/BlockQuote.php',
         'League\\CommonMark\\Block\\Element\\Document' => __DIR__ . '/..' . '/league/commonmark/src/Block/Element/Document.php',
@@ -3599,6 +3620,8 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'SebastianBergmann\\Timer\\RuntimeException' => __DIR__ . '/..' . '/phpunit/php-timer/src/RuntimeException.php',
         'SebastianBergmann\\Timer\\Timer' => __DIR__ . '/..' . '/phpunit/php-timer/src/Timer.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Stringy\\StaticStringy' => __DIR__ . '/..' . '/danielstjules/stringy/src/StaticStringy.php',
+        'Stringy\\Stringy' => __DIR__ . '/..' . '/danielstjules/stringy/src/Stringy.php',
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\CommandLoader\\CommandLoaderInterface' => __DIR__ . '/..' . '/symfony/console/CommandLoader/CommandLoaderInterface.php',
         'Symfony\\Component\\Console\\CommandLoader\\ContainerCommandLoader' => __DIR__ . '/..' . '/symfony/console/CommandLoader/ContainerCommandLoader.php',
