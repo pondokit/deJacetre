@@ -1,0 +1,10 @@
+setelah di masukan ke dalam in progres, 
+
+1 Buat terlebih daulu new branch, 
+  sebelum membuat branch pastikan kita beraada di mana
+  pastikan kita berada di master, 
+  setelah master bru kita membuat yang baru
+2 cara mebuat brach baru sekaligus masuk : git 
+3 Cara lihat update terbaru 
+ -git checkout master
+ -git pull origin master

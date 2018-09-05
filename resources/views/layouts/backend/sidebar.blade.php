@@ -30,7 +30,7 @@ $url1 = request()->segment(1);
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class=" {{ $url1 == 'home' ? 'active' : '' }} " >
+        <li class=" {{ request()->is('home') ? 'active' : '' }} " >
           <a href="/home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
@@ -82,6 +82,40 @@ $url1 = request()->segment(1);
                 </a>
               </li>
             @endif
+          </ul>
+        </li>
+
+        <li class="treeview {{ $url2 == 'visitor' ? 'active' : '' }}">
+          <a href="#">
+            <i class="fa fa-signal"></i> <span>Visitor</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li >
+              <a href=" # ">
+                <i class="fa fa-circle-o"></i> Summary
+              </a>
+            </li>
+            <li >
+              <a href=" {{route('visitortracker.all_requests')}} ">
+                <i class="fa fa-circle-o"></i> All
+              </a>
+            </li>
+            <li >
+              <a href="#">
+                <i class="fa fa-circle-o"></i> Visits
+              </a>
+            </li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Bots</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Country</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> OS</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Browsers</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Languages</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Unique</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Users</a></li>
+            <li ><a href="#"><i class="fa fa-circle-o"></i> Url</a></li>
           </ul>
         </li>
 

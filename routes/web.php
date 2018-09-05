@@ -88,4 +88,10 @@ Route::get('/blog-data', [
 	'as'	=> 'blog.data'
 ]);
 
+Route::get('/ammar', function (){
+	return view('backend.visitor.index');
+});
+
+VisitStats::routes();
+
 Route::resource('backend/permissions', 'Backend\PermissionsController');
