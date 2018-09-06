@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->bio ? Markdown::convertToHtml(e($this->bio)) : NULL;
     }
+
+  	public function namef($id)
+  	{
+  		return $this->find($id)->name;
+  	}
 }
