@@ -72,7 +72,7 @@ $url1 = request()->segment(1);
           <ul class="treeview-menu">
             <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
               <a href="{{ route('users.index') }}">
-                <i class="fa fa-circle-o"></i> <span>Users</span>
+                <i class="fa fa-circle-o"></i><span>Users</span>
               </a>
             </li>
             <li class=" {{ $url2 == 'roles' ? 'active' : '' }} ">
