@@ -88,4 +88,6 @@ Route::get('/blog-data', [
 	'as'	=> 'blog.data'
 ]);
 
+VisitStats::routes();
+
 Route::resource('backend/permissions', 'Backend\PermissionsController');

@@ -1,5 +1,4 @@
 <?php
-$url2 = request()->segment(2);
 $url1 = request()->segment(1);
 ?>
 <aside class="main-sidebar">
@@ -35,7 +34,13 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview {{ $url2 == 'blog' ? 'active' : '' }}">
+        <li class="treeview 
+        {{
+          (request()->is('backend/blog')) || 
+          (request()->is('backend/blog/create')) 
+          ? 'active' : ''
+        }}
+        ">
           <a href="#">
             <i class="fa fa-book"></i> <span>Blog</span>
             <span class="pull-right-container">
@@ -43,10 +48,20 @@ $url1 = request()->segment(1);
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
+            <li class=" 
+            {{
+              request()->is('backend/blog') 
+              ? 'active' : '' 
+            }} 
+            ">
               <a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a>
             </li>
-            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
+            <li class=" 
+            {{
+              request()->is('backend/blog/create') 
+              ? 'active' : ''
+            }}
+            ">
               <a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a>
             </li>
           </ul>
@@ -55,13 +70,20 @@ $url1 = request()->segment(1);
 
 
         @if (check_user_permissions(request(), "Categories@index"))
-        <li class="{{ $url2 == 'categories' ? 'active' : '' }}">
+        <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
           </a>
         </li>
         @endif
-        <li class="treeview {{ $url2 == 'users' ? 'active' : '' }}">
+        <li class="treeview 
+        {{
+          (request()->is('backend/users')) ||
+          (request()->is('backend/role')) || 
+          (request()->is('backend/permissionmenu'))
+           ? 'active' : ''
+        }}
+        ">
           <a href="#">
             <i class="fa fa-users"></i> <span>User Permission</span>
             <span class="pull-right-container">
@@ -69,19 +91,151 @@ $url1 = request()->segment(1);
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
+            <li class=" 
+            {{ 
+              request()->is('backend/role') 
+              ? 'active' : '' 
+            }} 
+            ">
               <a href="#"><i class="fa fa-circle-o"></i>Role Menu</a>
             </li>
-            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
+            <li class=" 
+            {{ 
+              request()->is('backend/permissionmenu') 
+              ? 'active' : '' 
+            }} 
+            ">
               <a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a>
             </li>
             @if (check_user_permissions(request(), "Users@index"))
-              <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
+              <li class=" 
+              {{ 
+                request()->is('backend/users') 
+                ? 'active' : '' 
+              }} 
+              ">
                 <a href="{{ route('users.index') }}">
                   <i class="fa fa-circle-o"></i> <span>Users</span>
                 </a>
               </li>
             @endif
+          </ul>
+        </li>
+        <li class="treeview 
+        {{ 
+          (request()->is('stats')) || 
+          (request()->is('stats/all')) || 
+          (request()->is('stats/visits')) || 
+          (request()->is('stats/bots')) || 
+          (request()->is('stats/countries')) || 
+          (request()->is('stats/os')) || 
+          (request()->is('stats/browsers')) || 
+          (request()->is('stats/languages')) || 
+          (request()->is('stats/unique')) || 
+          (request()->is('stats/users')) || 
+          (request()->is('stats/urls'))  
+        ? 'active' : '' }}">
+          <a href="#">
+            <i class="fa fa-signal"></i> <span>Pengunjung</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="
+            {{ 
+              request()->is('stats') ? 'active' : '' 
+            }}">
+              <a href=" {{route('visitortracker.summary')}} ">
+                <i class="fa fa-circle-o"></i> Summary
+              </a>
+            </li>
+            <li  class=" {{ request()->is('stats/all') ? 'active' : '' }} ">
+              <a href=" {{route('visitortracker.all_requests')}} ">
+                <i class="fa fa-circle-o"></i> All
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/visits') ? 'active' : '' 
+            }}
+            ">
+              <a href=" {{route('visitortracker.visits')}} ">
+                <i class="fa fa-circle-o"></i> Visits
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/bots') ? 'active' : '' 
+            }}
+            ">
+              <a href=" {{route('visitortracker.bots')}}">
+                <i class="fa fa-circle-o"></i> Bots
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/countries') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.countries')}}">
+                <i class="fa fa-circle-o"></i> Country
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/os') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.os')}}">
+                <i class="fa fa-circle-o"></i> OS
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/browsers') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.browsers')}}">
+                <i class="fa fa-circle-o"></i> Browsers
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/languages') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.languages')}}">
+                <i class="fa fa-circle-o"></i> Languages
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/unique') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.unique')}}">
+                <i class="fa fa-circle-o"></i> Unique
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/users') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.users')}}">
+                <i class="fa fa-circle-o"></i> Users
+              </a>
+            </li>
+            <li class="
+            {{ 
+              request()->is('stats/urls') ? 'active' : '' 
+            }}
+            ">
+              <a href="{{route('visitortracker.urls')}}">
+                <i class="fa fa-circle-o"></i> Url
+              </a>
+            an</li>
           </ul>
         </li>
 
