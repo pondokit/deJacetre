@@ -92,3 +92,8 @@ VisitStats::routes();
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
 Route::resource('/backend/roles', 'Backend\RolesController');
+
+Route::get('/pusher', function () {
+	event(new App\Events\NewComment('livi'));
+	return redirect()->route('blog.data');
+});
