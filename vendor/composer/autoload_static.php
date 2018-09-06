@@ -99,6 +99,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
             'Laravel\\Socialite\\' => 18,
             'Laratrust\\' => 10,
         ),
+        'J' => 
+        array (
+            'Jorenvh\\Share\\' => 14,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -299,6 +303,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'Laratrust\\' => 
         array (
             0 => __DIR__ . '/..' . '/santigarcor/laratrust/src',
+        ),
+        'Jorenvh\\Share\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -2178,6 +2186,9 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'Jorenvh\\Share\\Providers\\ShareServiceProvider' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Providers/ShareServiceProvider.php',
+        'Jorenvh\\Share\\Share' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/Share.php',
+        'Jorenvh\\Share\\ShareFacade' => __DIR__ . '/..' . '/jorenvanhocht/laravel-share/src/ShareFacade.php',
         'Laratrust\\Commands\\AddLaratrustUserTraitUseCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/AddLaratrustUserTraitUseCommand.php',
         'Laratrust\\Commands\\MakePermissionCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakePermissionCommand.php',
         'Laratrust\\Commands\\MakeRoleCommand' => __DIR__ . '/..' . '/santigarcor/laratrust/src/Commands/MakeRoleCommand.php',

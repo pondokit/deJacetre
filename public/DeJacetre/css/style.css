@@ -249,24 +249,28 @@ h1, h2, h3, h4, h5, h6 {
 #content .extra p {
 	font-size: 15px;
 }
-#content .extra a {
+#content .extra div>ul>li {
 	display: inline-block;
-	border-radius: 50%;
-	color: #fff;
-	width: 25px;
-	height: 25px;
-	padding-top: 2px;
 	text-align: center;
-	font-size: 15px;
 	margin-left: 5px;
 }
-#content .extra a:nth-child(2) {
+#content .extra div>ul>li>a {
+	display: block;
+	color: #fff;
+	height: 25px;
+	width: 25px;
+	font-size: 15px;
+	border-radius: 50%;
+	padding-top: 2px;
+
+}
+#content .extra div>ul>li:first-child a {
 	background: blue;
 }
-#content .extra a:nth-child(3) {
+#content .extra div>ul>li:nth-child(2) a {
 	background: aqua;
 }
-#content .extra a:last-child {
+#content .extra div>ul>li:last-child a {
 	background: red;
 }
 #sidebar {
