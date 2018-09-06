@@ -8,7 +8,7 @@ $url1 = request()->segment(1);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="{{ Auth::user()->gravatar() }}" class="img-circle" alt="User Image">
+          <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" />
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
