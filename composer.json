@@ -17,6 +17,7 @@
         "laravelcollective/html": "^5.4.0",
         "laravolt/avatar": "^2.0",
         "santigarcor/laratrust": "5.0.*",
+        "voerro/laravel-visitor-tracker": "^1.2",
         "yajra/laravel-datatables-oracle": "^8.7"
     },
     "require-dev": {

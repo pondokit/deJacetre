@@ -124,6 +124,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Voerro\Laravel\VisitorTracker\VisitorTrackerServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Laravolt\Avatar\ServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -184,8 +185,8 @@ return [
     */
 
     'aliases' => [
-
         'Avatar'    => Laravolt\Avatar\Facade::class,
+        'VisitStats' => Voerro\Laravel\VisitorTracker\Facades\VisitStats::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

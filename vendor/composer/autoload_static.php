@@ -11,10 +11,11 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        '04c6c5c2f7095ccf6c481d3e53e1776f' => __DIR__ . '/..' . '/mustangostang/spyc/Spyc.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -44,6 +45,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         array (
             'Whoops\\' => 7,
             'Webmozart\\Assert\\' => 17,
+        ),
+        'V' => 
+        array (
+            'Voerro\\Laravel\\VisitorTracker\\' => 30,
         ),
         'T' => 
         array (
@@ -129,6 +134,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+            'DeviceDetector\\' => 15,
             'DeepCopy\\' => 9,
             'DebugBar\\' => 9,
         ),
@@ -171,6 +177,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Voerro\\Laravel\\VisitorTracker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src',
         ),
         'Traitor\\' => 
         array (
@@ -355,6 +365,10 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'DeviceDetector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/piwik/device-detector',
         ),
         'DeepCopy\\' => 
         array (
@@ -619,6 +633,35 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedListFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedListFilter.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'DeviceDetector\\Cache\\Cache' => __DIR__ . '/..' . '/piwik/device-detector/Cache/Cache.php',
+        'DeviceDetector\\Cache\\PSR16Bridge' => __DIR__ . '/..' . '/piwik/device-detector/Cache/PSR16Bridge.php',
+        'DeviceDetector\\Cache\\PSR6Bridge' => __DIR__ . '/..' . '/piwik/device-detector/Cache/PSR6Bridge.php',
+        'DeviceDetector\\Cache\\StaticCache' => __DIR__ . '/..' . '/piwik/device-detector/Cache/StaticCache.php',
+        'DeviceDetector\\DeviceDetector' => __DIR__ . '/..' . '/piwik/device-detector/DeviceDetector.php',
+        'DeviceDetector\\Parser\\Bot' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Bot.php',
+        'DeviceDetector\\Parser\\BotParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/BotParserAbstract.php',
+        'DeviceDetector\\Parser\\Client\\Browser' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/Browser.php',
+        'DeviceDetector\\Parser\\Client\\Browser\\Engine' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/Browser/Engine.php',
+        'DeviceDetector\\Parser\\Client\\Browser\\Engine\\Version' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/Browser/Engine/Version.php',
+        'DeviceDetector\\Parser\\Client\\ClientParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/ClientParserAbstract.php',
+        'DeviceDetector\\Parser\\Client\\FeedReader' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/FeedReader.php',
+        'DeviceDetector\\Parser\\Client\\Library' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/Library.php',
+        'DeviceDetector\\Parser\\Client\\MediaPlayer' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/MediaPlayer.php',
+        'DeviceDetector\\Parser\\Client\\MobileApp' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/MobileApp.php',
+        'DeviceDetector\\Parser\\Client\\PIM' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Client/PIM.php',
+        'DeviceDetector\\Parser\\Device\\Camera' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/Camera.php',
+        'DeviceDetector\\Parser\\Device\\CarBrowser' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/CarBrowser.php',
+        'DeviceDetector\\Parser\\Device\\Console' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/Console.php',
+        'DeviceDetector\\Parser\\Device\\DeviceParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/DeviceParserAbstract.php',
+        'DeviceDetector\\Parser\\Device\\HbbTv' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/HbbTv.php',
+        'DeviceDetector\\Parser\\Device\\Mobile' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/Mobile.php',
+        'DeviceDetector\\Parser\\Device\\PortableMediaPlayer' => __DIR__ . '/..' . '/piwik/device-detector/Parser/Device/PortableMediaPlayer.php',
+        'DeviceDetector\\Parser\\OperatingSystem' => __DIR__ . '/..' . '/piwik/device-detector/Parser/OperatingSystem.php',
+        'DeviceDetector\\Parser\\ParserAbstract' => __DIR__ . '/..' . '/piwik/device-detector/Parser/ParserAbstract.php',
+        'DeviceDetector\\Parser\\VendorFragment' => __DIR__ . '/..' . '/piwik/device-detector/Parser/VendorFragment.php',
+        'DeviceDetector\\Yaml\\Parser' => __DIR__ . '/..' . '/piwik/device-detector/Yaml/Parser.php',
+        'DeviceDetector\\Yaml\\Spyc' => __DIR__ . '/..' . '/piwik/device-detector/Yaml/Spyc.php',
+        'DeviceDetector\\Yaml\\Symfony' => __DIR__ . '/..' . '/piwik/device-detector/Yaml/Symfony.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
@@ -4205,6 +4248,18 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'Traitor\\TraitUseAdder' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/TraitUseAdder.php',
         'Traitor\\Traitor' => __DIR__ . '/..' . '/kkszymanowski/traitor/src/Traitor.php',
         'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
+        'Voerro\\Laravel\\VisitorTracker\\Controllers\\StatisticsController' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Controllers/StatisticsController.php',
+        'Voerro\\Laravel\\VisitorTracker\\Facades\\VisitStats' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Facades/VisitStats.php',
+        'Voerro\\Laravel\\VisitorTracker\\Geoip' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Geoip.php',
+        'Voerro\\Laravel\\VisitorTracker\\Geoip\\Driver' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Geoip/Driver.php',
+        'Voerro\\Laravel\\VisitorTracker\\Geoip\\Ipstack' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Geoip/Ipstack.php',
+        'Voerro\\Laravel\\VisitorTracker\\Geoip\\Userinfo' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Geoip/Userinfo.php',
+        'Voerro\\Laravel\\VisitorTracker\\Jobs\\GetGeoipData' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Jobs/GetGeoipData.php',
+        'Voerro\\Laravel\\VisitorTracker\\Middleware\\RecordVisits' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Middleware/RecordVisits.php',
+        'Voerro\\Laravel\\VisitorTracker\\Models\\Visit' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Models/Visit.php',
+        'Voerro\\Laravel\\VisitorTracker\\Tracker' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/Tracker.php',
+        'Voerro\\Laravel\\VisitorTracker\\VisitStats' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/VisitStats.php',
+        'Voerro\\Laravel\\VisitorTracker\\VisitorTrackerServiceProvider' => __DIR__ . '/..' . '/voerro/laravel-visitor-tracker/src/VisitorTrackerServiceProvider.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
