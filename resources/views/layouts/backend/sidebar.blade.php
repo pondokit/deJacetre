@@ -36,27 +36,11 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="treeview 
-        {{
-          (request()->is('backend/blog')) || 
-          (request()->is('backend/blog/create')) 
-          ? 'active' : ''
-        }}
-        ">
-          <a href="#">
-            <i class="fa fa-book"></i> <span>Blog</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
             <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
-              <a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a>
+              <a href="{{ route('blog.index') }}">
+                <i class="fa fa-book"></i> <span>All Posts</span>
+              </a>
             </li>
-            <li class=" {{ $url2 == 'blog' && $url3 == 'create' ? 'active' : '' }} ">
-              <a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a>
-            </li>
-          </ul>
         </li>
 
         @if (check_user_permissions(request(), "Categories@index"))
