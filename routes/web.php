@@ -91,3 +91,4 @@ Route::get('/blog-data', [
 VisitStats::routes();
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
+Route::resource('/backend/roles', 'Backend\RolesController');
