@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Session;
 
-class PermissionDestroyRequest extends FormRequest
+class RoleDestroyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,17 +14,16 @@ class PermissionDestroyRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
-        // return !($this->route('category') == config('cms.default_category_id'));
+        return !($this->route('role') == config('cms.default_role_id'));
     }
 
     public function failedAuthorization()
     {
         Session::put('page',[
-            'name'  => 'permissions',
-            'title' => 'permission' 
+            'name'  => 'roles',
+            'title' => 'role'
         ]);
-        
+
         abort(403);
     }
 
