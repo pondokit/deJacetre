@@ -1,4 +1,5 @@
 <?php
+$url3 = request()->segment(3);
 $url2 = request()->segment(2);
 $url1 = request()->segment(1);
 ?>
@@ -43,16 +44,14 @@ $url1 = request()->segment(1);
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
               <a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> All Posts</a>
             </li>
-            <li class=" {{ $url2 == 'blog' ? 'active' : '' }} ">
+            <li class=" {{ $url2 == 'blog' && $url3 == 'create' ? 'active' : '' }} ">
               <a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> Add New</a>
             </li>
           </ul>
         </li>
-
-
 
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="{{ $url2 == 'categories' ? 'active' : '' }}">
@@ -61,25 +60,26 @@ $url1 = request()->segment(1);
           </a>
         </li>
         @endif
+        
         @if (check_user_permissions(request(), "Users@index"))
-        <li class="treeview {{ $url2 == 'users' ? 'active' : '' }}">
+        <li class="treeview {{ $url2 == 'roles' || $url2 == 'permissions' || $url2 == 'users' ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-users"></i> <span>User Permission</span>
+            <i class="fa fa-users"></i> <span>Manage Users</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
             <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
-              <a href="{{ route('roles.index') }}"><i class="fa fa-circle-o"></i>Role Menu</a>
-            </li>
-            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
-              <a href="#"><i class="fa fa-circle-o"></i>Permession Menu</a>
-            </li>
-            <li class=" {{ $url2 == 'users' ? 'active' : '' }} ">
               <a href="{{ route('users.index') }}">
                 <i class="fa fa-circle-o"></i> <span>Users</span>
               </a>
+            </li>
+            <li class=" {{ $url2 == 'roles' ? 'active' : '' }} ">
+              <a href="{{ route('roles.index') }}"><i class="fa fa-circle-o"></i>Roles</a>
+            </li>
+            <li class=" {{ $url2 == 'permissions' ? 'active' : '' }} ">
+              <a href="{{ route('permissions.index') }}"><i class="fa fa-circle-o"></i>Permissions</a>
             </li>
           </ul>
         </li>
