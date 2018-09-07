@@ -27,6 +27,15 @@
       <div class="box-header with-border clearfix">
         <div class="pull-left">
           <a href="{{ route('blog.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#filter"><i class="fa fa-filter"></i> Filter</button>
+          @if (session('author') !== null || session('category') !== null)
+            <b> = </b>
+            <button class="btn btn-default disabled">
+              {!! session('author') !== null ? '<b class="filtered1">Author: </b>'.$author->namef(session('author')) : null !!}
+              {!! session('category') !== null ? '<b class="filtered2">Category: </b>'.$category->namef(session('category')) : null !!}
+            </button>
+            <a href="?none" class="btn btn-default filterless">Disable Filter</a>
+          @endif
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
           <?php $links = [] ?>
@@ -40,6 +49,35 @@
         </div>
       </div>
       <!-- /.box-header -->
+
+      <!-- Modal -->
+      <div id="filter" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <form action="" method="get">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Filter Search</h4>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  {!! Form::label('author') !!}
+                  {!! Form::select('author', $author_data, (($author_id = session('author')) ? $author_id : null), ['class' => 'form-control select2 filter1', 'style' => 'cursor:pointer;']) !!}
+                </div>
+                <div class="form-group">
+                  {!! Form::label('category') !!}
+                  {!! Form::select('category', $category_data, (($category_id = session('category')) ? $category_id : null), ['class' => 'form-control select2 filter2', 'style' => 'cursor:pointer;']) !!}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
 
       <!-- box-body -->
       <div class="box-body">
@@ -74,13 +112,37 @@
             columns: [
                 { data: 'action', name: 'action', orderable: false, searchable: false },
                 { data: 'title', name: 'title' },
-                { data: 'author', name: 'author' },
-                { data: 'category', name: 'category' },
-                { data: 'date', name: 'date' },
-                { data: 'label', name: 'label' },
-                { data: 'view', name: 'view' },
+                { data: 'author', name: 'author', orderable: false, searchable: false },
+                { data: 'category', name: 'category', orderable: false, searchable: false },
+                { data: 'created_at', name: 'created_at' },
+                { data: 'label', name: 'label', orderable: false, searchable: false },
+                { data: 'view_count', name: 'view_count' },
             ]
         });
     });
+
+    // Filter Function
+    $('#filter select').css('width', '100%');
+    $('.select2').select2({
+      placeholder: "Choose a filter",
+      allowClear: true
+    });
+    $('.select2-container .select2-selection--single').css('height', 'auto');
+
+    $(document).ready(function(){
+      if ($('b').hasClass('filtered1') && $('b').hasClass('filtered2')) {
+
+      }
+      else if ($('b').hasClass('filtered1')) {
+        $('.filter2').val(null).trigger('change');
+      }
+      else if ($('b').hasClass('filtered2')) {
+        $('.filter1').val(null).trigger('change');
+      }
+      else {
+        $('.select2').val(null).trigger('change');
+      }
+    });
+
 	</script>
 @endsection

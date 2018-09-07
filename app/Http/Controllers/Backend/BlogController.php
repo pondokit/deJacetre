@@ -7,6 +7,8 @@ use Brian2694\Toastr\Facades\Toastr;
 use Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Category;
+use App\User;
 use App\Post;
 use Session;
 
@@ -30,13 +32,24 @@ class BlogController extends BackendController
 
         $statusList = $this->statusList($request);
 
+        Session::forget('author');
+        Session::forget('category');
+
         Session::put('status', $request->get('status'));
+        Session::put('author', $request->get('author'));
+        Session::put('category', $request->get('category'));
 
         if (session('status') == 'trash') {
             $onlyTrashed = TRUE;
         }
 
-        return view('backend.blog.index', compact('onlyTrashed','statusList'));
+        $category = new Category();
+        $category_data = $category->pluck('title','id');
+
+        $author = new User();
+        $author_data = $author->pluck('name','id');
+
+        return view('backend.blog.index', compact('onlyTrashed','statusList', 'category', 'category_data', 'author', 'author_data' ));
     }
 
     private function statusList($request)
@@ -66,6 +79,22 @@ class BlogController extends BackendController
             $posts       = request()->user()->posts()->with('author','category');
         } else {
             $posts       = Post::with('author','category');
+        }
+
+        if (session('author') !== null || session('category') !== null) {
+
+            $author = (session('author') !== null) ? session('author') : null;
+            $category = (session('category') !== null) ? session('category') : null;
+
+            if (empty($author)) {
+                $filter = array(['category_id', $category]);
+            } else if (empty($category)) {
+                $filter = array(['author_id', $author]);
+            } else {
+                $filter = array(['author_id', $author], ['category_id', $category]);
+            }
+
+            $posts = Post::with('author','category')->where($filter);
         }
 
         return Datatables::of($posts)
@@ -104,18 +133,15 @@ class BlogController extends BackendController
             ->addColumn('label', function($post) {
                 return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'></abbr>".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
             })
-            ->addColumn('date', function($post) {
-                return $post->dateFormatted(true);
-            })
+            // ->addColumn('date', function($post) {
+            //     return $post->dateFormatted(true);
+            // })
             // ->addColumn('label', function($post) {
             //     return $post->dateFormatted();
             // })
             // ->addColumn('status', function($post) {
             //     return (session('status') != 'trash') ? "<abbr title='".$post->dateFormatted(true)."'></abbr>".$post->publicationLabel() : "<abbr title='".$post->dateFormatted(true)."'>".$post->dateFormatted()."</abbr>";
             // })
-            ->addColumn('view', function($post) {
-                return $post->view_count;
-            })
             ->make(true);
     }
 

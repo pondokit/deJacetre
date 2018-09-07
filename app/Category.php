@@ -17,4 +17,9 @@ class Category extends Model
 	{
 		return 'slug';
 	}
+
+	public function namef($id)
+	{
+		return $this->find($id)->title;
+	}
 }
