@@ -50,8 +50,7 @@
         {!! Form::label('roles') !!}
 
         @if ($user->exists && ($user->id == config('cms.default_user_id')) || isset($hideRoleDropdown))
-          {!! Form::hidden('roles', $role_name) !!}
-          <p class="form-control-static">{{ implode(", ", $role_name) }}</p>
+          {!! Form::select('roles', App\Role::pluck('display_name','id'), $user->exists ? $role_id : null, ['name' => 'roles[]', 'class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'cursor:pointer;', 'disabled']) !!}
         @else
           {!! Form::select('roles', App\Role::pluck('display_name','id'), $user->exists ? $role_id : null, ['name' => 'roles[]', 'class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'cursor:pointer;']) !!}
         @endif

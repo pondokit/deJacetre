@@ -13,8 +13,6 @@
   <link rel="stylesheet" href="/AdminLTE-2.4.3/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="/AdminLTE-2.4.3/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="/AdminLTE-2.4.3/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/AdminLTE-2.4.3/dist/css/skins/_all-skins.min.css">
@@ -33,6 +31,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" />
   <!-- Select2 -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/AdminLTE-2.4.3/dist/css/AdminLTE.min.css">
   <!-- Custom CSS -->
   @yield('style')
   <link rel="stylesheet" type="text/css" href="/css/custom.css">
