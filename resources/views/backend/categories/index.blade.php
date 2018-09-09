@@ -29,16 +29,20 @@
           <a href="{{ route('categories.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
-          
+
         </div>
       </div>
       <!-- /.box-header -->
 
       <!-- box-body -->
-      <div class="box-body">
-        @include('backend.partials.message')      	
-        @include('backend.categories.table')
-      </div>
+
+      <!-- if(!empty()){ -->
+
+        <div class="box-body">
+          @include('backend.partials.message')
+          @include('backend.categories.table')
+        </div>
+
       <!-- /.box-body -->
 
     </div>

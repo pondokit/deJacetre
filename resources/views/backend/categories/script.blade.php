@@ -25,7 +25,7 @@
         $('#slug').val(theSlug);
         $('#title').val(theTitle);
     });
-    
+
     $('#save-btn').click(function(e){
 
         var str = $('#title');
