@@ -34,7 +34,7 @@
               {!! session('author') !== null ? '<b class="filtered1">Author: </b>'.$author->namef(session('author')) : null !!}
               {!! session('category') !== null ? '<b class="filtered2">Category: </b>'.$category->namef(session('category')) : null !!}
             </button>
-            <a href="?none" class="btn btn-default filterless">Disable Filter</a>
+            <a href="?status=all" class="btn btn-default filterless">Disable Filter</a>
           @endif
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
@@ -42,7 +42,24 @@
           @foreach($statusList as $key => $value)
             @if($value)
               <?php $selected = Request::get('status') == $key ? 'selected-status' : ''; ?>
-              <?php $links[] = "<a class=\"{$selected}\" href=\"?status={$key}\">".ucwords($key)." ({$value})</a>" ?>
+              <?php 
+                if (isset($_GET['author']) || isset($_GET['category'])) {
+
+                  $category = isset($_GET['category']) ? $_GET['category'] : '';
+                  $author = isset($_GET['author']) ? $_GET['author'] : '';
+
+                  if (empty($author)) {
+                    $href = "?category={$category}&status={$key}";
+                  } else if (empty($category)) {
+                    $href = "?author={$author}&status={$key}";
+                  } else {
+                    $href = "?category={$category}&author={$author}&status={$key}";
+                  }
+                } else {
+                  $href = "?status={$key}"; 
+                } 
+                $links[] = "<a class='{$selected}' href='{$href}'>".ucwords($key)." ({$value})</a>" 
+                ?>
             @endif
           @endforeach
           {!! implode(' | ', $links) !!}
