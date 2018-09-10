@@ -111,9 +111,14 @@ class UsersController extends BackendController
     {
         $user = User::findOrFail($id);
 
-        foreach ($user->roles as $role) {
-            $role_id[] = $role->id;
-            $role_name[] = $role->display_name;
+        if ($user->roles()->count()) {
+            foreach ($user->roles as $role) {
+                $role_id[] = $role->id;
+                $role_name[] = $role->display_name;
+            }
+        } else {
+            $role_id = null;
+            $role_name = null;
         }
 
         return view('backend.users.edit', compact('user', 'role_id', 'role_name'));
@@ -144,7 +149,7 @@ class UsersController extends BackendController
         if ($id != config('cms.default_user_id'))
         {
             $user->detachRoles();
-            $user->attachRoles($request->role);
+            $user->attachRoles($request->roles);
         }
         elseif ($request->role != 1)
         {
@@ -156,7 +161,7 @@ class UsersController extends BackendController
 
         return redirect('backend/users');
     }
-
+    
     /**
      * Remove the specified resource from storage.
      *
