@@ -16,7 +16,6 @@
       </div>
       <div class="form-group {{ $errors->has('permissions') ? 'has-error' : '' }}">
         {!! Form::label('permissions') !!}
-
         {!! Form::select('permissions', App\Permission::pluck('name','id'), $role->exists ? $permission_id : null, ['name' => 'permissions[]', 'class' => 'form-control select2', 'multiple' => 'multiple', 'style' => 'cursor:pointer;']) !!}
 
         @if ($errors->has('permissions'))

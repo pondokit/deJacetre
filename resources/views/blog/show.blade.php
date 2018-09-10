@@ -27,11 +27,7 @@
         <div class="content">{!! $post->body_html !!}</div>
         <div class="tags pull-left">
           <h4>Tags :</h4>
-          <a href="#" class="tag"><b>#</b> this</a>
-          <a href="#" class="tag"><b>#</b> not</a>
-          <a href="#" class="tag"><b>#</b> less</a>
-          <a href="#" class="tag"><b>#</b> CSS</a>
-          <a href="#" class="tag"><b>#</b> day</a>
+              {!! $post->tags_html !!}
         </div>
         <div class="extra pull-right">
           <p><i class="fa fa-eye"></i> {{ $post->view_count }} {{ str_plural('View', $post->view_count) }}</p>

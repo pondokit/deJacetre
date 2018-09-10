@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\User;
 
 class HomeController extends BackendController
 {
@@ -20,7 +21,13 @@ class HomeController extends BackendController
     public function edit(Request $request)
     {
         $user = $request->user();
-        return view('backend.home.edit', compact('user'));
+
+        foreach ($user->roles as $role) {
+            $role_id[] = $role->id;
+            $role_name[] = $role->display_name;
+        }
+
+        return view('backend.home.edit', compact('user', 'role_id', 'role_name'));
     }
 
     public function update(Requests\AccountUpdateRequest $request)
@@ -32,13 +39,13 @@ class HomeController extends BackendController
         }
 
         $user->update($request->all());
-        
+
         $message = [
             'type' => 'message',
             'msg'  => 'User was updated successfully!'
         ];
 
-        if ($request->role != 1) 
+        if ($request->role != 1)
         {
             $message['type'] = 'error-message';
             $message['msg']  = "You can't change the default user role's";

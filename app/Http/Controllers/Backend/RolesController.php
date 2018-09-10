@@ -105,9 +105,14 @@ class RolesController extends BackendController
     {
         $role = Role::findOrFail($id);
 
-        foreach ($role->permissions as $permission) {
-            $permission_id[] = $permission->id;
-            $permission_name[] = $permission->name;
+        if ($role->permissions()->count()) {
+            foreach ($role->permissions as $permission) {
+                $permission_id[] = $permission->id;
+                $permission_name[] = $permission->name;
+            }
+        } else {
+            $permission_id   = null;
+            $permission_name = null;
         }
 
         return view('backend.roles.edit', compact('role', 'permission_id', 'permission_name'));
