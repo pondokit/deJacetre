@@ -66,21 +66,6 @@ class BlogController extends BackendController
 
     public function data()
     {
-
-        if (($status = session('status')) && $status == 'trash') {
-            $posts       = Post::onlyTrashed()->with('author','category');
-        } else if ($status == 'published') {
-            $posts       = Post::published()->with('author','category');
-        } else if ($status == 'scheduled') {
-            $posts       = Post::scheduled()->with('author','category');
-        } else if ($status == 'draft') {
-            $posts       = Post::draft()->with('author','category');
-        } else if ($status == 'own') {
-            $posts       = request()->user()->posts()->with('author','category');
-        } else {
-            $posts       = Post::with('author','category');
-        }
-
         if (session('author') !== null || session('category') !== null) {
 
             $author = (session('author') !== null) ? session('author') : null;
@@ -95,6 +80,23 @@ class BlogController extends BackendController
             }
 
             $posts = Post::with('author','category')->where($filter);
+        } else {
+            $posts = new Post();
+        }
+
+        if (($status = session('status')) && $status == 'trash') {
+            $posts       = $posts->onlyTrashed()->with('author','category');
+        } else if ($status == 'published') {
+            $posts       = $posts->published()->with('author','category');
+        } else if ($status == 'scheduled') {
+            $posts       = $posts->scheduled()->with('author','category');
+        } else if ($status == 'draft') {
+            $posts       = $posts->draft()->with('author','category');
+        } else if ($status == 'own') {
+            // $posts       = request()->user()->posts()->with('author','category');
+            $posts       = $posts->with('author','category')->where('author_id', request()->user()->id);
+        } else {
+            $posts       = $posts->with('author','category');
         }
 
         return Datatables::of($posts)
