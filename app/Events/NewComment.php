@@ -23,10 +23,9 @@ class NewComment
      *
      * @return void
      */
-    public function __construct($username)
+    public function __construct($message)
     {
-        $this->username = $username;
-        $this->message = "{$username} added a new comment";
+        $this->message = $message;
     }
 
     /**
