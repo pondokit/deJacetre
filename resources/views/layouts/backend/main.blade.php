@@ -103,10 +103,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 <!-- Select2 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="https://js.pusher.com/4.3/pusher.min.js"></script>
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
-  })
+  });
+  // Enable pusher logging - don't include this in production
+  Pusher.logToConsole = true;
+
+  // Initiate the Pusher JS library
+  var pusher = new Pusher('c0a360181cb45c52282b', {
+      encrypted: true,
+      cluster: 'ap1',
+  });
+
+  // Subscribe to the channel we specified in our Laravel Event
+  var channel = pusher.subscribe('new-comment');
+
+  // Bind a function to a Event (the full Laravel class)
+  channel.bind('App\\Events\\NewComment', function(data) {
+      // this is called when the event notification is received...
+      $('.comment-wrapper').append(`
+        <li>
+          <a href="#">
+            <div class="pull-left">
+              <img src="{{ Avatar::create('kentut neraka')->toBase64() }}" />
+            </div>
+            <h4>
+              `+data.author+`
+              <small><i class="fa fa-clock-o"></i></small>
+            </h4>
+            <p>`+data.comment+`</p>
+          </a>
+        </li>        
+      `);
+    $('.comment-warning').append(`
+        1
+      `);
+  });
 </script>
 
 @yield('script')
