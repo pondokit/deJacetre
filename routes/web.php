@@ -102,3 +102,12 @@ Route::get('/pusher', function () {
 	event(new App\Events\NewComment('livi'));
 	return redirect()->route('blog.data');
 });
+Route::get('/backend/sosmeds', [
+	'uses'	=> 'Backend\SosmedController@index',
+	'as'	=> 'sosmeds.index'
+]);
+
+Route::put('/backend/sosmeds', [
+	'uses'	=> 'Backend\SosmedController@update',
+	'as'	=> 'sosmeds.update'
+]);

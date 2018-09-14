@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Views\Composers\NavigationComposer;
 use App\Views\Composers\CustomComposer;
+use App\Views\Composers\GlobalComposer;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,7 @@ class ComposerServiceProvider extends ServiceProvider
     {
         view()->composer('layouts.sidebar', NavigationComposer::class);
         view()->composer('blog.slider', CustomComposer::class);
+        view()->composer('layouts.main', GlobalComposer::class);
     }
 
     /**
