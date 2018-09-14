@@ -97,3 +97,4 @@ VisitStats::routes();
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
 Route::resource('/backend/roles', 'Backend\RolesController');
+Route::resource('/backend/comments', 'Backend\CommentsController');

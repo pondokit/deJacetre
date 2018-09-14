@@ -43,6 +43,8 @@ $url1 = request()->segment(1);
             </li>
         </li>
 
+
+
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
           <a href="{{ route('categories.index') }}">
@@ -73,19 +75,19 @@ $url1 = request()->segment(1);
           </ul>
         </li>
         @endif
-        <li class="treeview 
-        {{ 
-          (request()->is('stats')) || 
-          (request()->is('stats/all')) || 
-          (request()->is('stats/visits')) || 
-          (request()->is('stats/bots')) || 
-          (request()->is('stats/countries')) || 
-          (request()->is('stats/os')) || 
-          (request()->is('stats/browsers')) || 
-          (request()->is('stats/languages')) || 
-          (request()->is('stats/unique')) || 
-          (request()->is('stats/users')) || 
-          (request()->is('stats/urls'))  
+        <li class="treeview
+        {{
+          (request()->is('stats')) ||
+          (request()->is('stats/all')) ||
+          (request()->is('stats/visits')) ||
+          (request()->is('stats/bots')) ||
+          (request()->is('stats/countries')) ||
+          (request()->is('stats/os')) ||
+          (request()->is('stats/browsers')) ||
+          (request()->is('stats/languages')) ||
+          (request()->is('stats/unique')) ||
+          (request()->is('stats/users')) ||
+          (request()->is('stats/urls'))
         ? 'active' : '' }}">
           <a href="#">
             <i class="fa fa-signal"></i> <span>Pengunjung</span>
@@ -95,8 +97,8 @@ $url1 = request()->segment(1);
           </a>
           <ul class="treeview-menu">
             <li class="
-            {{ 
-              request()->is('stats') ? 'active' : '' 
+            {{
+              request()->is('stats') ? 'active' : ''
             }}">
               <a href=" {{route('visitortracker.summary')}} ">
                 <i class="fa fa-circle-o"></i> Summary
@@ -108,8 +110,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/visits') ? 'active' : '' 
+            {{
+              request()->is('stats/visits') ? 'active' : ''
             }}
             ">
               <a href=" {{route('visitortracker.visits')}} ">
@@ -117,8 +119,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/bots') ? 'active' : '' 
+            {{
+              request()->is('stats/bots') ? 'active' : ''
             }}
             ">
               <a href=" {{route('visitortracker.bots')}}">
@@ -126,8 +128,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/countries') ? 'active' : '' 
+            {{
+              request()->is('stats/countries') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.countries')}}">
@@ -135,8 +137,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/os') ? 'active' : '' 
+            {{
+              request()->is('stats/os') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.os')}}">
@@ -144,8 +146,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/browsers') ? 'active' : '' 
+            {{
+              request()->is('stats/browsers') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.browsers')}}">
@@ -153,8 +155,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/languages') ? 'active' : '' 
+            {{
+              request()->is('stats/languages') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.languages')}}">
@@ -162,8 +164,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/unique') ? 'active' : '' 
+            {{
+              request()->is('stats/unique') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.unique')}}">
@@ -171,8 +173,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/users') ? 'active' : '' 
+            {{
+              request()->is('stats/users') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.users')}}">
@@ -180,8 +182,8 @@ $url1 = request()->segment(1);
               </a>
             </li>
             <li class="
-            {{ 
-              request()->is('stats/urls') ? 'active' : '' 
+            {{
+              request()->is('stats/urls') ? 'active' : ''
             }}
             ">
               <a href="{{route('visitortracker.urls')}}">
@@ -190,7 +192,13 @@ $url1 = request()->segment(1);
             </li>
           </ul>
         </li>
-
+      </li>
+          <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
+            <a href="{{ route('comments.index') }}">
+              <i class="fa fa-comment"></i> <span>Comments</span>
+            </a>
+          </li>
+      </li>
       </ul>
     </section>
     <!-- /.sidebar -->
