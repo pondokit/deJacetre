@@ -36,11 +36,10 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-            <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
-              <a href="{{ route('blog.index') }}">
-                <i class="fa fa-book"></i> <span>All Posts</span>
-              </a>
-            </li>
+        <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
+          <a href="{{ route('blog.index') }}">
+            <i class="fa fa-book"></i> <span>All Posts</span>
+          </a>
         </li>
 
         @if (check_user_permissions(request(), "Categories@index"))
@@ -96,7 +95,7 @@ $url1 = request()->segment(1);
           <ul class="treeview-menu">
             <li class="
             {{ 
-              request()->is('stats') ? 'active' : '' 
+              request()->is('stats/summary') ? 'active' : '' 
             }}">
               <a href=" {{route('visitortracker.summary')}} ">
                 <i class="fa fa-circle-o"></i> Summary
@@ -189,6 +188,11 @@ $url1 = request()->segment(1);
               </a>
             </li>
           </ul>
+        </li>
+        <li class="{{ request()->is('backend/sosmeds') ? 'active' : '' }}">
+          <a href="{{ route('sosmeds.index') }}">
+            <i class="fa fa-random"></i> <span>Sosmeds</span>
+          </a>
         </li>
 
       </ul>

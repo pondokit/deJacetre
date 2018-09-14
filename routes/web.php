@@ -97,3 +97,13 @@ VisitStats::routes();
 
 Route::resource('backend/permissions', 'Backend\PermissionsController');
 Route::resource('/backend/roles', 'Backend\RolesController');
+
+Route::get('/backend/sosmeds', [
+	'uses'	=> 'Backend\SosmedController@index',
+	'as'	=> 'sosmeds.index'
+]);
+
+Route::put('/backend/sosmeds', [
+	'uses'	=> 'Backend\SosmedController@update',
+	'as'	=> 'sosmeds.update'
+]);

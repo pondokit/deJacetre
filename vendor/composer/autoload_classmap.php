@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\BlogController' => $baseDir . '/app/Http/Controllers/BlogController.php',
     'App\\Http\\Controllers\\CommentsController' => $baseDir . '/app/Http/Controllers/CommentsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\SosmedController' => $baseDir . '/app/Http/Controllers/Backend/SosmedController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\CheckLogin' => $baseDir . '/app/Http/Middleware/CheckLogin.php',
     'App\\Http\\Middleware\\CheckPermissionsMiddleware' => $baseDir . '/app/Http/Middleware/CheckPermissionsMiddleware.php',
