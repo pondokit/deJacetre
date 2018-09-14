@@ -40,17 +40,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ Avatar::create($currentUser->name)->toBase64() }}" class="user-image" alt="{{ $currentUser->name }}">
-              <span class="hidden-xs">{{ $currentUser->name }}</span>
+              <img src="/image/{{ App\User::find($currentUser->id)->image }}" class="user-image" alt="{{ $currentUser->name }}">
+              <span class="hidden-xs">Hai, {{ $currentUser->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="{{ Avatar::create($currentUser->name)->toBase64() }}" />
+                <img src="/image/{{ App\User::find($currentUser->id)->image }}" />
 
                 <p>
                   <?php $userRole = $currentUser->roles->first() !== NULL ? $currentUser->roles->first()->display_name : "Noob" ?>
-                  
+
                   {{ $currentUser->name }} - {{$userRole}}
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
