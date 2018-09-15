@@ -127,7 +127,7 @@
         <li>
           <a href="#">
             <div class="pull-left">
-              <img src="{{ Avatar::create('kentut neraka')->toBase64() }}" />
+              <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
             </div>
             <h4>
               `+data.author+`
