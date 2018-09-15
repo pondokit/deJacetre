@@ -469,6 +469,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Controllers\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/BlogController.php',
         'App\\Http\\Controllers\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommentsController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\SosmedController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/SosmedController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\CheckLogin' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckLogin.php',
         'App\\Http\\Middleware\\CheckPermissionsMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckPermissionsMiddleware.php',

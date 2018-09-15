@@ -112,7 +112,7 @@
   Pusher.logToConsole = true;
 
   // Initiate the Pusher JS library
-  var pusher = new Pusher('c0a360181cb45c52282b', {
+  var pusher = new Pusher('{{env('PUSHER_APP_KEY')}}', {
       encrypted: true,
       cluster: 'ap1',
   });

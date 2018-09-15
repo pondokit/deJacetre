@@ -9,6 +9,7 @@ use App\Comment;
 
 class CommentsController extends Controller
 {
+
     public function store(CommentStoreRequest $request)
     {
     	$data = $request->all();
