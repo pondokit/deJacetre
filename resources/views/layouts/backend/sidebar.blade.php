@@ -87,7 +87,7 @@ $url1 = request()->segment(1);
           (request()->is('stats/urls'))  
         ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-signal"></i> <span>Pengunjung</span>
+            <i class="fa fa-bar-chart"></i> <span>Pengunjung</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -191,7 +191,7 @@ $url1 = request()->segment(1);
         </li>
         <li class="{{ request()->is('backend/sosmeds') ? 'active' : '' }}">
           <a href="{{ route('sosmeds.index') }}">
-            <i class="fa fa-random"></i> <span>Sosmeds</span>
+            <i class="fa fa-rss-square"></i> <span>Sosmeds</span>
           </a>
         </li>
 
