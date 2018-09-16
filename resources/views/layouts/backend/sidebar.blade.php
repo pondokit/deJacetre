@@ -209,7 +209,6 @@ $url1 = request()->segment(1);
           (request()->is('backend/comments')) || 
           (request()->is('backend/comments/*/edit')) ? 'active' : '' 
         }}">
-        ">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
