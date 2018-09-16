@@ -16,11 +16,11 @@ class SosmedsTableSeeder extends Seeder
         DB::table('sosmeds')->insert([
         	[
         		'id'		=> 1,
-        		'facebook'	=> 'www.facebook.com',
-        		'instagram'	=> 'www.instagram.com',
-        		'github'	=> 'www.github.com',
-        		'twitter'	=> 'www.twitter.com',
-        		'youtube'	=> 'www.youtube.com',
+        		'facebook'	=> 'http://www.facebook.com',
+        		'instagram'	=> 'http://www.instagram.com',
+        		'github'	=> 'http://www.github.com',
+        		'twitter'	=> 'http://www.twitter.com',
+        		'youtube'	=> 'http://www.youtube.com',
         	],
         ]);
     }
