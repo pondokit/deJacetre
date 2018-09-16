@@ -1,4 +1,5 @@
 <?php
+$url4 = request()->segment(4);
 $url3 = request()->segment(3);
 $url2 = request()->segment(2);
 $url1 = request()->segment(1);
@@ -36,16 +37,23 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
+        <li class=" 
+        {{ 
+          (request()->is('backend/blog')) || 
+          (request()->is('backend/blog/create')) || 
+          (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+        }} ">
           <a href="{{ route('blog.index') }}">
             <i class="fa fa-book"></i> <span>All Posts</span>
           </a>
         </li>
-
-
-
         @if (check_user_permissions(request(), "Categories@index"))
-        <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
+        <li class="
+        {{ 
+          (request()->is('backend/categories')) || 
+          (request()->is('backend/categories/create')) || 
+          (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+        }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
           </a>
@@ -196,7 +204,12 @@ $url1 = request()->segment(1);
             <i class="fa fa-rss-square"></i> <span>Sosmeds</span>
           </a>
         </li>
-        <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
+        <li class="  
+        {{ 
+          (request()->is('backend/comments')) || 
+          (request()->is('backend/comments/*/edit')) ? 'active' : '' 
+        }}">
+        ">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
