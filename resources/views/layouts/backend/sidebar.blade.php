@@ -196,7 +196,7 @@ $url1 = request()->segment(1);
             <i class="fa fa-random"></i> <span>Sosmeds</span>
           </a>
         </li>
-        <li class=" {{ $url2 == 'blog' && $url3 == null ? 'active' : '' }} ">
+        <li class=" {{ request()->is('backend/comments') ? 'active' : '' }} ">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
