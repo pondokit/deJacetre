@@ -19,7 +19,6 @@
       slugInput.val(theSlug);
     });
 
-    var simplemde1 = new SimpleMDE({ element: $("#excerpt")[0] });
     var simplemde2 = new SimpleMDE({ element: $("#body")[0] });
 
     $('#datetimepicker1').datetimepicker({
