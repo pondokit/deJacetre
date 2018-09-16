@@ -48,6 +48,15 @@
       $('.publish').click(function(){
         $('.check').val("publish");
       });
+
+      $('.slug-edit').click(function(){
+        $('#slug').removeAttr('disabled');
+        $('#slug').focus();
+      });
+
+      $('#slug').focusout(function(){
+        $('#slug').prop('disabled', true);
+      });
     });
 
 	</script>

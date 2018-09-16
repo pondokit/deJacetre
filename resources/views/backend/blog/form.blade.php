@@ -14,14 +14,25 @@
           <span class="help-block">{{ $errors->first('title') }}</span>
         @endif
       </div>
-      <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
-        {!! Form::label('slug') !!}
-        {!! Form::text('slug', null, ['class' => 'form-control']) !!}
 
+      <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+
+        <!-- Label -->
+        {!! Form::label('slug') !!}
+
+        <!-- Input -->
+        <div class="clearfix" style="display: block;">
+          <p style="padding: 7px 5px 0 0; float: left;">{{ url('') }}/</p>
+          {!! Form::text('slug', null, ['class' => 'form-control', 'style' => 'float: left; max-width: auto !important; width: auto !important;', 'disabled']) !!}
+          <span class="btn btn-sm btn-primary slug-edit" style="font-size: 15px; border-radius: 0; ">Edit</span>
+        </div>
+        
+        <!-- Error Message -->
         @if ($errors->has('slug'))
           <span class="help-block">{{ $errors->first('slug') }}</span>
         @endif
       </div>
+
       <div class="form-group excerpt">
         {!! Form::label('excerpt') !!}
         {!! Form::textarea('excerpt', null, ['class' => 'form-control']) !!}
