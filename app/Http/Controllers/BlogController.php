@@ -11,7 +11,7 @@ use App\Tag;
 class BlogController extends Controller
 {
     protected $limit = 3;
-				
+
     public function index()
     {
     	// $posts = Post::with('author', 'comments')->orderBy('created_at','desc')->get();
@@ -42,7 +42,7 @@ class BlogController extends Controller
                             ->published()
                             ->latestFirst()
                             ->simplePaginate($this->limit);
-                            
+
         return view('blog.index', compact('posts', 'categoryName'));
     }
 
@@ -55,7 +55,7 @@ class BlogController extends Controller
                     ->published()
                     ->latestFirst()
                     ->simplePaginate($this->limit);
-                            
+
         return view('blog.index', compact('posts', 'tagName'));
     }
 
@@ -68,7 +68,7 @@ class BlogController extends Controller
                             ->published()
                             ->latestFirst()
                             ->simplePaginate($this->limit);
-                            
+
         return view('blog.index', compact('posts', 'authorName'));
     }
 
@@ -86,5 +86,11 @@ class BlogController extends Controller
         $postComments = $post->comments()->simplePaginate(3);
 
         return view('blog.show', compact('post', 'postComments'));
+    }
+
+    public function contact()
+    {
+      return view('blog.contact', compact('post'));
+
     }
 }
