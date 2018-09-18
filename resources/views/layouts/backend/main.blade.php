@@ -141,6 +141,17 @@
         1
       `);
   });
+
+  $(document).ready(function(){
+    $('.treeview').mouseenter(function(){
+      if(!($(this).hasClass('menu-open'))){
+        $("a", this).click();
+      }
+    });
+    $('.treeview').mouseleave(function(){
+      $("a", this).click();
+    });
+  });
 </script>
 
 @yield('script')
