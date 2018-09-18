@@ -13,7 +13,7 @@ class CommentsController extends BackendController
 {
     public function index()
     {
-      Comment::where("is_read", '=', 0)->update(['is_read' => 1]);
+      Comment::where("is_read", 0)->update(['is_read' => 1]);
       $comments = Comment::with('post')->paginate(10);
 
       return view('backend.comments.index', compact('comments'));

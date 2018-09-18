@@ -122,6 +122,7 @@
 
   // Bind a function to a Event (the full Laravel class)
   channel.bind('App\\Events\\NewComment', function(data) {
+
       // this is called when the event notification is received...
       $('.comment-wrapper').append(`
         <li>
@@ -137,9 +138,18 @@
           </a>
         </li>        
       `);
-    $('.comment-warning').append(`
-        
-      `);
+
+      // notification label
+      var label = $('.comment-label span');
+      var latest = parseInt(label.text());
+      var count = latest + 1; 
+      $(document).ready(function(){
+        if ( count > 0 ) {
+          label.show();
+        }
+        label.text(count);
+      });
+      
   });
 </script>
 

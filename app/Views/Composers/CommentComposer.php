@@ -14,7 +14,7 @@ class CommentComposer
 
 	private function composeComment(View $view)
 	{
-		$comment = Comment::where("is_read", '=', 0);
+		$comment = Comment::where("is_read", 0)->get();
 		$view->with('comment', $comment);
 	}
 }

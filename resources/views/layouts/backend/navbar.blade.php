@@ -18,38 +18,50 @@
 
       <?php
         $currentUser = Auth::user();
-        $notif = $comment->where('is_read', 0)->count();
+        $notif = $comment->count();
       ?>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+            <!-- Label -->
+            <a href="#" class="dropdown-toggle comment-label" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-                @if($notif > 0)
-                  <span class="label label-warning comment-warning">{{ $notif }}</span>
-                @endif
+              <span class="label label-warning" style="{{ ($notif == 0) ? 'display: none;' : '' }}">
+                {{ $notif }}
+              </span>
             </a>
+
+            <!-- Notifications -->
             <ul class="dropdown-menu">
-              @if($notif > 0)
-               @foreach($comment as $com)
-                <li class="header">
-                  {{ $com->author_name }}
-                </li>
-                <li>
-                  <!-- inner menu: contains the actual data -->
-                  <ul class="menu comment-wrapper">
-                    {{ Str::words($com->body, 8, ' ...') }}<!-- end message -->
-                  </ul>
-                </li>
-              @endforeach
-             @else
-              <li class="header">
-                You Have no noew messageee, did u miss me?
+              <li class="header comment-header">
+                @if($notif > 0)
+                  <p>You have {{ $notif }} {{ str_plural('notification', $notif) }}</p>
+                @else
+                  <p>You don't have any notification</p>
+                @endif
               </li>
-             @endif
-              <li class="footer"><a href="{{ route('comments.index') }}">See All Comments</a></li>
+              <li>
+                <ul class="menu comment-wrapper">
+                  @foreach($comment as $com)
+                    <li>
+                      <a href="#">
+                        <div class="pull-left">
+                          <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
+                        </div>
+                        <h4>
+                          {{ $com->author_name }}
+                          <small><i class="fa fa-clock-o"></i></small>
+                        </h4>
+                        <p>{{ Str::words($com->body, 4, '...') }}</p>
+                      </a>
+                    </li> 
+                  @endforeach
+                </ul>
+              </li>
+              <li class="footer"><a href="{{ route('comments.index') }}">Show All Comments</a></li>
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
