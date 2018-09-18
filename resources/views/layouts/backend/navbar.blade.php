@@ -16,7 +16,10 @@
         <span class="icon-bar"></span>
       </a>
 
-      <?php $currentUser = Auth::user(); ?>
+      <?php
+        $currentUser = Auth::user();
+        $notif = $comment->where('is_read', 0)->count();
+      ?>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -24,17 +27,29 @@
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning comment-warning"></span>
+                @if($notif > 0)
+                  <span class="label label-warning comment-warning">{{ $notif }}</span>
+                @endif
             </a>
             <ul class="dropdown-menu">
-              <li class="header">You have message</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu comment-wrapper">
-                  <!-- end message -->
-                </ul>
+              @if($notif > 0)
+               @foreach($comment as $com)
+                <li class="header">
+                  {{ $com->author_name }}
+                </li>
+                <li>
+                  <!-- inner menu: contains the actual data -->
+                  <ul class="menu comment-wrapper">
+                    {{ Str::words($com->body, 8, ' ...') }}<!-- end message -->
+                  </ul>
+                </li>
+              @endforeach
+             @else
+              <li class="header">
+                You Have no noew messageee, did u miss me?
               </li>
-              <!-- <li class="footer"><a href="#">See All Messages</a></li> -->
+             @endif
+              <li class="footer"><a href="{{ route('comments.index') }}">See All Comments</a></li>
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->

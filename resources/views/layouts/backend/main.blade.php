@@ -138,7 +138,7 @@
         </li>        
       `);
     $('.comment-warning').append(`
-        1
+        
       `);
   });
 </script>
