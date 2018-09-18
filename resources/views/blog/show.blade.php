@@ -2,6 +2,14 @@
 
 @section('post', 'active')
 
+@section('meta')
+<meta property="og:title" content="{{ $post->title }}">
+<meta property="og:description" content="{{ Str::words($post->body, 10, '...') }}">
+<meta property="og:image" content="{{ ($post->image_url) ? $post->image_url : 'https://picsum.photos/1204/700' }}">
+<meta property="og:url" content="{{ route('blog.post', $post->slug) }}">
+<meta name="twitter:card" content="summary_large_image">
+@endsection
+
 @section('content')
  <!-- Main -->
 <div id="post" class="container">
@@ -10,9 +18,9 @@
   <div id="content" class="col-sm-8">
 
     <div class="thumbnail">
-      @if($post->image_url)
-        <img src="{{ $post->image_url }}" alt="{{ $post->image }}" class="img-responsive" style="width: 100%;">
-      @endif
+      <!-- Image -->
+      <img src="{{ ($post->image_url) ? $post->image_url : 'https://picsum.photos/1204/700' }}" alt="{{ ($post->image_url) ? $post->image : $post->title }}" class="img-responsive" style="width: 100%;">
+      <!-- Caption -->
       <div class="caption head">
         <a href="{{ route('category', $post->category->slug) }}" class="category">{{ $post->category->title }}</a>
         <h2 class="title">{{ $post->title }}</h2>

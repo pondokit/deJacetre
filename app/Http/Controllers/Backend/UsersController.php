@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Brian2694\Toastr\Facades\Toastr;
 use Yajra\Datatables\Datatables;
+use Laravolt\Avatar\Facade as Avatar;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
@@ -77,14 +78,18 @@ class UsersController extends BackendController
      */
     public function store(Requests\UserStoreRequest $request)
     {
+        //avatar
+        $gambar = str_random(10).".png";
+        Avatar::create($request->name)->save("image/".$gambar);
+
         $request->merge([
-            'password' => bcrypt($request->password)
+            'password' => bcrypt($request->password),
+            'image' => $gambar,
         ]);
 
         $user = User::create($request->all());
 
         $user->attachRoles($request->roles);
-
         Toastr::success('New user was created successfully!', 'Create User');
 
         return redirect('backend/users');
@@ -135,9 +140,26 @@ class UsersController extends BackendController
     {
         if (empty($request->password)){
             unset($request['password']);
+        } else {
+            $request->merge([
+              'password' => bcrypt($request->password),
+            ]);
         }
 
         $user = User::findOrFail($id);
+
+        if ($request->name !== $user->name) {
+          if (file_exists('/image/$user->image')) {
+            unlink('/image/$user->image');
+          }
+
+          $gambar = str_random(10).".png";
+          Avatar::create($request->name)->save("image/".$gambar);
+
+          $request->merge([
+            'image' => $gambar,
+          ]);
+        }
 
         $user->update($request->all());
 
@@ -161,7 +183,7 @@ class UsersController extends BackendController
 
         return redirect('backend/users');
     }
-    
+
     /**
      * Remove the specified resource from storage.
      *
