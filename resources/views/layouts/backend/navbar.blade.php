@@ -47,16 +47,11 @@
                 <ul class="menu comment-wrapper">
                   @foreach($comment as $com)
                     <li>
-                      <a href="#">
-                        <div class="pull-left">
-                          <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
-                        </div>
-                        <h4>
-                          {{ $com->author_name }}
-                          <small><i class="fa fa-clock-o"></i></small>
-                        </h4>
-                        <p>{{ Str::words($com->body, 4, '...') }}</p>
-                      </a>
+                      <h4>
+                        {{ $com->author_name }}
+                        <small><i class="fa fa-clock-o"></i></small>
+                      </h4>
+                      <p>{{ Str::words($com->body, 4, '...') }}</p>
                     </li> 
                   @endforeach
                 </ul>
