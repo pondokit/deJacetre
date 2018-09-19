@@ -112,3 +112,8 @@ Route::put('/backend/sosmeds', [
 	'as'	=> 'sosmeds.update'
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');
+
+Route::get('/about', [
+	'uses' 	=> 'BlogController@about',
+	'as' 	=> 'blog.about'
+]);

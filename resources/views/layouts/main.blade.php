@@ -23,7 +23,7 @@
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
 	      <li class="@yield('post')"><a href="#">Blog</a></li>
 	      <li><a href="#">Contact</a></li>
-	      <li><a href="#">About</a></li>
+	      <li class="@yield('about')"><a href="{{ route('blog.about') }}">About</a></li>
 	    </ul>
 	    <form class="navbar-form navbar-right" action="{{ route('blog') }}">
 	      <div class="input-group">
