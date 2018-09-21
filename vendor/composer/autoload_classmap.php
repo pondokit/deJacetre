@@ -63,6 +63,7 @@ return array(
     'App\\Sosmed' => $baseDir . '/app/Sosmed.php',
     'App\\Tag' => $baseDir . '/app/Tag.php',
     'App\\User' => $baseDir . '/app/User.php',
+    'App\\Views\\Composers\\CommentComposer' => $baseDir . '/app/Views/Composers/CommentComposer.php',
     'App\\Views\\Composers\\CustomComposer' => $baseDir . '/app/Views/Composers/CustomComposer.php',
     'App\\Views\\Composers\\GlobalComposer' => $baseDir . '/app/Views/Composers/GlobalComposer.php',
     'App\\Views\\Composers\\NavigationComposer' => $baseDir . '/app/Views/Composers/NavigationComposer.php',

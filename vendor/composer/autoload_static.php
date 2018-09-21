@@ -507,6 +507,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Sosmed' => __DIR__ . '/../..' . '/app/Sosmed.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Views\\Composers\\CommentComposer' => __DIR__ . '/../..' . '/app/Views/Composers/CommentComposer.php',
         'App\\Views\\Composers\\CustomComposer' => __DIR__ . '/../..' . '/app/Views/Composers/CustomComposer.php',
         'App\\Views\\Composers\\GlobalComposer' => __DIR__ . '/../..' . '/app/Views/Composers/GlobalComposer.php',
         'App\\Views\\Composers\\NavigationComposer' => __DIR__ . '/../..' . '/app/Views/Composers/NavigationComposer.php',
