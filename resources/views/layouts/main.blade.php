@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	@yield('meta')
 	<title>De Jacetre</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -46,11 +47,11 @@
 					&copy;<a href="#">De Jacetre</a> 2017. All right reserved.
 				</div>
 				<div class="social pull-right">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-instagram"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-pinterest"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href=" {{$sosmeds->facebook}} "><i class="fa fa-facebook"></i></a>
+					<a href="{{$sosmeds->instagram}}"><i class="fa fa-instagram"></i></a>
+					<a href="{{$sosmeds->twitter}}"><i class="fa fa-twitter"></i></a>
+					<a href="{{$sosmeds->github}}"><i class="fa fa-github"></i></a>
+					<a href="{{$sosmeds->youtube}}"><i class="fa fa-youtube"></i></a>
 				</div>
 			</div>
 		</div>

@@ -22,10 +22,6 @@
           <span class="help-block">{{ $errors->first('slug') }}</span>
         @endif
       </div>
-      <div class="form-group excerpt">
-        {!! Form::label('excerpt') !!}
-        {!! Form::textarea('excerpt', null, ['class' => 'form-control']) !!}
-      </div>
       <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
         {!! Form::label('body') !!}
         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}

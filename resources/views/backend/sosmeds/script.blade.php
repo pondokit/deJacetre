@@ -17,18 +17,18 @@
         return theSlug;
     }
 
-    $('#title').on('blur', function() {
-        var str = $('#title');
+    $('#display_name').on('blur', function() {
+        var str = $('#display_name');
         var theSlug = slug(str);
         var theTitle = toTitleCase(str.val());
 
-        $('#slug').val(theSlug);
-        $('#title').val(theTitle);
+        $('#name').val(theSlug);
+        $('#display_name').val(theTitle);
     });
-
+    
     $('#save-btn').click(function(e){
 
-        var str = $('#title');
+        var str = $('#display_name');
 
         if (str.val()) {
 
@@ -37,10 +37,10 @@
             var theSlug = slug(str);
             var theTitle = toTitleCase(str.val());
 
-            $('#title').val(theTitle);
-            $('#slug').val(theSlug);
+            $('#display_name').val(theTitle);
+            $('#name').val(theSlug);
 
-            $('#category-form').submit();
+            $('#permission-form').submit();
         }
     });
 </script>
