@@ -1,0 +1,255 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #1f232c;
+    line-height: 1.15;
+}
+input,
+textarea {
+    font-family: 'Lato', sans-serif;
+    color: #1f232c;
+    font-size: 13px;
+}
+img {
+	/* agar img tidak melebihi element parentnya */
+	max-width: 100%;
+}
+a {
+	color: #333333;
+	text-decoration: none;
+	outline: none;
+	/* menambah efek transisi ketika dihover */
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-bottom: 1em;
+}
+h1, h2, h3, h4, h5, h6, b, strong {
+	font-weight: 700; /* bukan bold atau bolder karena saya menggunakan google font */
+}
+.text-input {
+	border-color: #ccc;
+	padding: 7px 8px;
+	border-radius: 5px;
+	-moz-box-shadow: inset 0 1px 0 #eee;
+	-webkit-box-shadow: inset 0 1px 0 #eee;
+	box-shadow: inset 0 1px 0 #eee;
+}
+.text-input:focus {
+	border-color: #bbb;
+	-webkit-box-shadow: 0 0 3px 1px #ddd;
+	-moz-box-shadow: 0 0 3px 1px #ddd;
+	box-shadow: 0 0 3px 1px #ddd;
+}
+.btn-submit {
+	background-color: #1f232c;
+	color: #f5f4f2;
+	font-size: 14px;
+	border: 0;
+	border-radius: 5px;
+	padding: 8px 16px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.btn-submit:hover,
+.btn-submit:active {
+	background-color: #373e4c;
+}
+.btn-submit:active {
+	position: relative;
+	top: 1px;
+}
+#content {
+	float: left;
+	width: 65.625%; /*630/960*/
+	margin-right: 3.125%; /*30/960*/
+}
+#sidebarr {
+	float: right;
+	width: 31.25%; /*300/960*/
+  margin-top: 30px;
+}
+.contact-us {
+	margin-top: 40px;
+}
+.contact-us li {
+	margin-top: 16px;
+}
+.contact-us label {
+	float: left;
+	width: 22.222222%; /*140/630*/
+	text-align: right;
+	margin-right: 3.968254%; /*25/630*/
+	padding-top: 6px;
+	font-weight: 700;
+}
+.contact-us label span {
+	color: #ef454d;
+	display: inline-block;
+	margin: -2px 3px 0 0;
+}
+.contact-us input,
+.contact-us textarea {
+	float: left;
+	width: 55.555556%; /*350/630*/
+	border: 1px solid #ccc;
+}
+.contact-us input:focus,
+.contact-us textarea:focus {
+	border: 1px solid #ccc;
+}
+.contact-us button {
+	margin-left: 26.190476%; /*165/630*/
+}
+/* footer */
+
+#contact-form p {
+	display: none;
+}
+#contact-form.sent form {
+	display: none;
+}
+#contact-form.sent p {
+	display: block;
+}
+#contact-form p {
+	position: relative;
+}
+#contact-form p i {
+	opacity: 0.5;
+	display: block;
+	float: right;
+	margin: 0;
+}
+
+/* Introduction to responsive website */
+
+/* responsive */
+@media only screen and (max-width:768px) {
+	#services .service-thumb,
+	#services .service-text,
+	#content,
+	#sidebarr {
+		float: none;
+		width: auto;
+	}
+	#sidebarr {
+		border-top: 1px solid #ccc;
+		margin-top: 50px;
+		padding-top: 50px;
+	}
+}
+@media only screen and (max-width:700px) {
+	#cta {
+		text-align: center;
+	}
+	#cta h2 {
+		float: none;
+		width: auto;
+	}
+	#cta a {
+		float: none;
+		display: inline-block;
+	}
+}
+@media only screen and (max-width:640px) {
+	.searchform {
+	}
+	.searchform input {
+		width: 65%;
+	}
+	.searchform button {
+		width: 15%;
+		margin-right: 0;
+	}
+	.home-listing li {
+		display: block;
+		float: none;
+		width: auto;
+		margin-top: 40px;
+		margin-left: 0;
+	}
+	.home-listing li:nth-child(3n+1) {
+		margin-left: 0;
+	}
+}
+@media only screen and (max-width:480px) {
+	.contact-us label,
+	.contact-us input,
+	.contact-us textarea {
+		float: none;
+		width: auto;
+	}
+	.contact-us label {
+		display: block;
+		text-align: left;
+		padding-bottom: 5px;
+	}
+	.contact-us input,
+	.contact-us textarea {
+		width: 100%;
+	}
+	.contact-us button {
+		margin-left: 0;
+	}
+}

@@ -1,3 +1,42 @@
+/* //contact us */
+ol, ul {
+	list-style: none;
+}
+.contact-us {
+	margin-top: 40px;
+}
+.contact-us li {
+	margin-top: 16px;
+}
+.contact-us label {
+	float: left;
+	width: 22.222222%; /*140/630*/
+	text-align: right;
+	margin-right: 3.968254%; /*25/630*/
+	padding-top: 6px;
+	font-weight: 700;
+}
+.contact-us label span {
+	color: #ef454d;
+	display: inline-block;
+	margin: -2px 3px 0 0;
+}
+.contact-us input,
+.contact-us textarea {
+	float: left;
+	width: 55.555556%; /*350/630*/
+	border: 1px solid #ccc;
+}
+.contact-us input:focus,
+.contact-us textarea:focus {
+	border: 1px solid #ccc;
+}
+.contact-us button {
+	margin-left: 26.190476%; /*165/630*/
+}
+
+
+/* body */
 body {
 	font-family: 'Lora', serif;
 }
