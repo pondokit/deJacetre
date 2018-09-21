@@ -9,7 +9,8 @@ $url1 = request()->segment(1);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/image/{{ App\User::find(Auth::user()->id)->image }}" />
+
+          <img src="{{ ($avatar = App\User::find(Auth::user()->id)->image) ? '/image/'.$avatar : Auth::user()->gravatar() }}" />
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>

@@ -37,16 +37,17 @@
               <!-- <li class="footer"><a href="#">See All Messages</a></li> -->
             </ul>
           </li>
+
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/image/{{ App\User::find($currentUser->id)->image }}" class="user-image" alt="{{ $currentUser->name }}">
+              <img src="{{ ($avatar = App\User::find($currentUser->id)->image) ? '/image/'.$avatar : $currentUser->gravatar() }}" class="user-image" alt="{{ $currentUser->name }}">
               <span class="hidden-xs">Hai, {{ $currentUser->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="/image/{{ App\User::find($currentUser->id)->image }}" />
+                <img src="{{ ($avatar = App\User::find($currentUser->id)->image) ? '/image/'.$avatar : $currentUser->gravatar() }}" />
 
                 <p>
                   <?php $userRole = $currentUser->roles->first() !== NULL ? $currentUser->roles->first()->display_name : "Noob" ?>
