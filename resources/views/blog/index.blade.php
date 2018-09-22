@@ -40,7 +40,7 @@
 
           </a>
           <div class="caption">
-            <p class="excerpt">{{ Str::words($post->body, 50)}} […]</p><p></p>
+            <p class="excerpt">{{ Str::words($post->body, 50, '')}} […]</p><p></p>
             <a href="{{ route('blog.post', $post->slug) }}" class="more">Read More</a>
           </div>
         </div><!-- Thumbnail Closer -->
