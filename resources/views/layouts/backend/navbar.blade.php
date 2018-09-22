@@ -16,25 +16,47 @@
         <span class="icon-bar"></span>
       </a>
 
-      <?php $currentUser = Auth::user(); ?>
+      <?php
+        $currentUser = Auth::user();
+        $notif = $comment->count();
+      ?>
 
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+            <!-- Label -->
+            <a href="#" class="dropdown-toggle comment-label" data-toggle="dropdown">
               <i class="fa fa-bell-o"></i>
-              <span class="label label-warning comment-warning"></span>
+              <span class="label label-warning" style="{{ ($notif == 0) ? 'display: none;' : '' }}">
+                {{ $notif }}
+              </span>
             </a>
+
+            <!-- Notifications -->
             <ul class="dropdown-menu">
-              <li class="header">You have message</li>
+              <li class="header comment-header">
+                @if($notif > 0)
+                  <p>You have {{ $notif }} {{ str_plural('notification', $notif) }}</p>
+                @else
+                  <p>You don't have any notification</p>
+                @endif
+              </li>
               <li>
-                <!-- inner menu: contains the actual data -->
                 <ul class="menu comment-wrapper">
-                  <!-- end message -->
+                  @foreach($comment as $com)
+                    <li>
+                      <h4>
+                        {{ $com->author_name }}
+                        <small><i class="fa fa-clock-o"></i></small>
+                      </h4>
+                      <p>{{ Str::words($com->body, 4, '...') }}</p>
+                    </li> 
+                  @endforeach
                 </ul>
               </li>
-              <!-- <li class="footer"><a href="#">See All Messages</a></li> -->
+              <li class="footer"><a href="{{ route('comments.index') }}">Show All Comments</a></li>
             </ul>
           </li>
 
