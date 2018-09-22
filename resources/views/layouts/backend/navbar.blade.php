@@ -47,6 +47,9 @@
                 <ul class="menu comment-wrapper">
                   @foreach($comment as $com)
                     <li>
+                      <div class="pull-left">
+                        <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
+                      </div>
                       <h4>
                         {{ $com->author_name }}
                         <small><i class="fa fa-clock-o"></i></small>
@@ -70,10 +73,9 @@
               <!-- User image -->
               <li class="user-header">
                 <img src="{{ ($avatar = App\User::find($currentUser->id)->image) ? '/image/'.$avatar : $currentUser->gravatar() }}" />
-
                 <p>
                   <?php $userRole = $currentUser->roles->first() !== NULL ? $currentUser->roles->first()->display_name : "Noob" ?>
-
+                  
                   {{ $currentUser->name }} - {{$userRole}}
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
