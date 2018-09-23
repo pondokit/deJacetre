@@ -1,6 +1,6 @@
 <table class="table table-hover" id="comments-table">
 	<thead>
-		<th width="80">Action</th>
+		<th width="90">Action</th>
 		<th>Visitor Name</th>
 		<th>Email</th>
 		<th>Website</th>
@@ -17,6 +17,9 @@
 				<form action=" {{ route('comments.destroy', $comment->id) }} " method="post">
                 	{{csrf_field()}}
                 	{{method_field("DELETE")}}
+									<a href="{{route('comments.show', $comment->id)}}" class="btn btn-xs btn-default">
+                		<i class="fa fa-info"></i>
+                	</a>
                 	<a href="{{route('comments.edit', $comment->id)}}" class="btn btn-xs btn-default">
                 		<i class="fa fa-edit"></i>
                 	</a>
