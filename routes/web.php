@@ -98,3 +98,13 @@ VisitStats::routes();
 Route::resource('backend/permissions', 'Backend\PermissionsController');
 Route::resource('/backend/roles', 'Backend\RolesController');
 Route::resource('/backend/comments', 'Backend\CommentsController');
+
+Route::get('/register', [
+	'uses'	=> 'Auth\RegisterController@register',
+	'as'	=> 'register.create'
+]);
+
+Route::post('/register', [
+	'uses'	=> 'Auth\RegisterController@store',
+	'as'	=> 'register.store'
+]);

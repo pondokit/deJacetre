@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Backend\\BackendController' => $baseDir . '/app/Http/Controllers/Backend/BackendController.php',
     'App\\Http\\Controllers\\Backend\\BlogController' => $baseDir . '/app/Http/Controllers/Backend/BlogController.php',
     'App\\Http\\Controllers\\Backend\\CategoriesController' => $baseDir . '/app/Http/Controllers/Backend/CategoriesController.php',
+    'App\\Http\\Controllers\\Backend\\CommentsController' => $baseDir . '/app/Http/Controllers/Backend/CommentsController.php',
     'App\\Http\\Controllers\\Backend\\HomeController' => $baseDir . '/app/Http/Controllers/Backend/HomeController.php',
     'App\\Http\\Controllers\\Backend\\PermissionsController' => $baseDir . '/app/Http/Controllers/Backend/PermissionsController.php',
     'App\\Http\\Controllers\\Backend\\RolesController' => $baseDir . '/app/Http/Controllers/Backend/RolesController.php',

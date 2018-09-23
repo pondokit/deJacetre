@@ -455,6 +455,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Controllers\\Backend\\BackendController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BackendController.php',
         'App\\Http\\Controllers\\Backend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BlogController.php',
         'App\\Http\\Controllers\\Backend\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CategoriesController.php',
+        'App\\Http\\Controllers\\Backend\\CommentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CommentsController.php',
         'App\\Http\\Controllers\\Backend\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/HomeController.php',
         'App\\Http\\Controllers\\Backend\\PermissionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/PermissionsController.php',
         'App\\Http\\Controllers\\Backend\\RolesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/RolesController.php',
