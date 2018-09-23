@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use App\Tag;
 use App\Sosmed;
+use App\Contact;
 
 class BlogController extends Controller
 {
@@ -91,6 +92,7 @@ class BlogController extends Controller
 
     public function contact()
     {
-        return view('blog.contact', compact('post'));
+      $contact = Contact::find(1);
+      return view('blog.contact', compact('contact'));
     }
 }
