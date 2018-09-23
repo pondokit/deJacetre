@@ -12,15 +12,14 @@
 
 	<!-- Content -->
 	<div id="content" class="col-sm-8">
-    
-
-      IM JUST ALITTLE BUDDY MASDIISJDIJIAJSD
-
-    <!-- Pager -->
-    <ul class="pager">
-      PAGER LOADER
-    </ul>
-
+      <div class="thumbnail">
+        <div class="caption head">
+          <h2 class="title">About Moi</h2>
+        </div>
+        <div class="caption">
+            <p>{!! $about->about !!}</p>
+        </div>
+      </div>
 	</div><!-- Content Closer -->
 
 	<!-- Sidebar -->

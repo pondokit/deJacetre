@@ -8,6 +8,7 @@ use App\User;
 use App\Post;
 use App\Tag;
 use App\Sosmed;
+use App\About;
 
 class BlogController extends Controller
 {
@@ -91,6 +92,7 @@ class BlogController extends Controller
 
     public function about()
     {
-        return view('blog.about');
+        $about = About::first();
+        return view('blog.about', compact('about'));
     }
 }

@@ -8,12 +8,12 @@
   <section class="content-header">
     <h1>
       About
-      <small>Edit Description about yourself</small>
+      <small>Edit Description about your blog</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('about.index') }}">About</a></li>
-      <li class="active">Description below</li>
+      <li><a href="{{ route('about.index') }}">About Page</a></li>
+      <li class="active">About Me</li>
     </ol>
   </section>
 
