@@ -29,23 +29,34 @@
 </head>
 <body class="hold-transition login-page">
 
-    @yield('content')
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="card">
+                  <div class="card-header">Register</div>
 
-    <!-- jQuery 3 -->
-    <script src="/AdminLTE-2.4.3/bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="/AdminLTE-2.4.3/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- iCheck -->
-    <script src="/AdminLTE-2.4.3/plugins/iCheck/icheck.min.js"></script>
-    <script>
-      $(function () {
-        $('input').iCheck({
-          checkboxClass: 'icheckbox_square-blue',
-          radioClass: 'iradio_square-blue',
-          increaseArea: '20%' /* optional */
-        });
+                  <div class="card-body">
+                    
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- jQuery 3 -->
+  <script src="/AdminLTE-2.4.3/bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="/AdminLTE-2.4.3/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- iCheck -->
+  <script src="/AdminLTE-2.4.3/plugins/iCheck/icheck.min.js"></script>
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' /* optional */
       });
-    </script>
-    @yield('script')
+    });
+  </script>
 </body>
 </html>

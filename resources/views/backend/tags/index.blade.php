@@ -1,19 +1,19 @@
 @extends('layouts.backend.main')
 
-@section('title','Labaru | Permissions')
+@section('title','Labaru | Tags')
 
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Permissions
-      <small>Display all permissions</small>
+      Tags
+      <small>Display all Tags</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('permissions.index') }}">Permissions</a></li>
-      <li class="active">All Permissions</li>
+      <li><a href="{{ route('tags.index') }}">Tags</a></li>
+      <li class="active">All Tags</li>
     </ol>
   </section>
 
@@ -26,7 +26,7 @@
     	<!-- box-header -->
       <div class="box-header with-border clearfix">
         <div class="pull-left">
-          <a href="{{ route('permissions.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+          <a href="{{ route('tags.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
         </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
           
@@ -37,9 +37,10 @@
       <!-- box-body -->
       <div class="box-body">
         @include('backend.partials.message')      	
-        @include('backend.permissions.table')
+        @include('backend.tags.table')
+
         <div class="pull-right">
-          {{ $permissions->links() }}
+          {{ $tags->links() }}
         </div>
       </div>
       <!-- /.box-body -->

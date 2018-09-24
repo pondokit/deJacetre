@@ -31,6 +31,10 @@ class PostsTableSeeder extends Seeder
     		$posts[] = [
     			'author_id'      => rand(1, 5),
     			'title'          => $faker->sentence(rand(2, 3)),
+<<<<<<< HEAD
+=======
+    			// 'excerpt'        => $faker->text(rand(250, 300)),
+>>>>>>> 476694c6531a4d0f3ad329ce09d441dec3d926c9
     			'body'           => $faker->paragraphs(rand(10, 15), true),
     			'slug'           => $faker->slug(),
     			'image'          => $image,
