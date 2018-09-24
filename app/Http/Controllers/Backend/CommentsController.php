@@ -48,4 +48,11 @@ class CommentsController extends BackendController
 
         return redirect('backend/comments');
     }
+
+    public function show($id)
+    {
+      $comments = Comment::findOrFail($id);
+
+      return view('backend.comments.show', compact('comments'));
+    }
 }
