@@ -42,8 +42,6 @@ $url1 = request()->segment(1);
           </a>
         </li>
 
-
-
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="{{ request()->is('backend/categories') ? 'active' : '' }}">
           <a href="{{ route('categories.index') }}">

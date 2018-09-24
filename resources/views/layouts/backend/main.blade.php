@@ -106,7 +106,9 @@
 <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
 <script>
   $(document).ready(function () {
-    $('.sidebar-menu').tree()
+    $('.sidebar-menu').tree({
+      animationSpeed: 100,
+    })
   });
   // Enable pusher logging - don't include this in production
   Pusher.logToConsole = true;
@@ -142,6 +144,7 @@
       `);
   });
 
+  // Sidebar Dropdown
   $(document).ready(function(){
     $('.treeview').mouseenter(function(){
       if(!($(this).hasClass('menu-open'))){
@@ -151,6 +154,28 @@
     $('.treeview').mouseleave(function(){
       $("a", this).click();
     });
+
+    // ============== Kode Mansukh ================
+    // $('.sidebar-menu').mouseleave(function(){
+    //   $('.treeview a').clearQueue();
+    //   $('.treeview a').stop(true, true);
+    //   $('.treeview ul').clearQueue();
+    //   $('.treeview ul').stop(true, true);
+    //   // if ($('.treeview-menu').css('display') == 'block'){
+    //   //   $('.treeview-menu').css('display', 'none');
+    //   // }
+    // });
+    // $('.sidebar-menu>li').mouseenter(function(){
+    //   // if (!$(this).hasClass('treeview')){
+    //     $('.treeview a').clearQueue();
+    //     $('.treeview a').stop(true, true);
+    //     $('.treeview ul').clearQueue();
+    //     $('.treeview ul').stop(true, true);
+    //     // if ($('.treeview-menu').css('display') == 'block'){
+    //     //   $('.treeview-menu').css('display', 'none');
+    //     // }
+    //   // }
+    // });
   });
 </script>
 
