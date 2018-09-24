@@ -21,7 +21,7 @@ class AboutController extends BackendController
 
     public function update(Request $request)
     {
-        About::findOrFail(1)->update($request->all);
+        About::findOrFail(1)->update($request->all());
 
         Toastr::success('Your about page has been updated!', 'Congrats');
 

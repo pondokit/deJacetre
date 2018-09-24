@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AboutTableSeeder' => $baseDir . '/database/seeds/AboutTableSeeder.php',
+    'App\\About' => $baseDir . '/app/About.php',
     'App\\Category' => $baseDir . '/app/Category.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -15,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+    'App\\Http\\Controllers\\Backend\\AboutController' => $baseDir . '/app/Http/Controllers/Backend/AboutController.php',
     'App\\Http\\Controllers\\Backend\\BackendController' => $baseDir . '/app/Http/Controllers/Backend/BackendController.php',
     'App\\Http\\Controllers\\Backend\\BlogController' => $baseDir . '/app/Http/Controllers/Backend/BlogController.php',
     'App\\Http\\Controllers\\Backend\\CategoriesController' => $baseDir . '/app/Http/Controllers/Backend/CategoriesController.php',

@@ -37,3 +37,6 @@
   <!-- /.content -->
 </div>
 @endsection
+
+@section('script')
+@include('backend.about.script')

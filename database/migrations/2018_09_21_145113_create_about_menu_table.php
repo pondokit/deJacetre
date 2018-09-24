@@ -16,6 +16,7 @@ class CreateAboutMenuTable extends Migration
         Schema::create('about', function (Blueprint $table) {
             $table->increments('id');
             $table->text('about');
+            $table->timestamps();
         });
     }
 
