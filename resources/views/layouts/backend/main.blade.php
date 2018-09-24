@@ -124,7 +124,7 @@
   channel.bind('App\\Events\\NewComment', function(data) {
 
       // this is called when the event notification is received...
-      $('.comment-wrapper').append(`
+      $('.comment-wrapper').prepend(`
         <li>
           <a href="#">
             <div class="pull-left">

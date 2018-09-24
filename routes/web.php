@@ -118,7 +118,6 @@ Route::put('/backend/sosmeds', [
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');
 
-<<<<<<< HEAD
 Route::get('backend/about', [
 	'uses'	=>	'Backend\AboutController@index',
 	'as'	=>	'about.index'
@@ -133,7 +132,7 @@ Route::get('/about', [
 	'uses'	=>	'BlogController@about',
 	'as'	=>	'about'
 ]);
-=======
+
 Route::resource('/backend/tags', 'Backend\TagsController');
 Route::get('/register', [
 	'uses'	=> 'Auth\RegisterController@register',
@@ -144,4 +143,3 @@ Route::post('/register', [
 	'uses'	=> 'Auth\RegisterController@store',
 	'as'	=> 'register.store'
 ]);
->>>>>>> 476694c6531a4d0f3ad329ce09d441dec3d926c9
