@@ -30,6 +30,7 @@
     $('#draft-btn').click(function(e){
       e.preventDefault();
       $('#published_at').val("");
+      $('#slug').removeAttr('disabled');
       $('#post-form').submit();
     });
 
@@ -45,8 +46,11 @@
 
     $('document').ready(function(){
       $('.check').val("draft");
-      $('.publish').click(function(){
+      $('.publish').click(function(e){
+        e.preventDefault();
+        $('#slug').removeAttr('disabled');
         $('.check').val("publish");
+        $('#post-form').submit();
       });
 
       $('.slug-edit').click(function(){
