@@ -246,6 +246,11 @@ $url1 = request()->segment(1);
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
         </li>
+        <li class="{{ (request()->is('backend/about')) ? 'active' : '' }}">
+          <a href="{{ route('about.index') }}">
+            <i class="fa fa-info"></i> <span>About</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
