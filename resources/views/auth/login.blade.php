@@ -59,7 +59,7 @@
     <!-- /.social-auth-links -->
 
     <a href="{{ route('password.request') }}">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    <a href="{{ route('register.create') }}" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->

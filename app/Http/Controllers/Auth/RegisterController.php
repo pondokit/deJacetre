@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Brian2694\Toastr\Facades\Toastr;
+use App\Http\Requests;
 
 class RegisterController extends Controller
 {
@@ -75,8 +77,30 @@ class RegisterController extends Controller
         abort(404);
     }
 
-    public function register(Request $request)
+    public function register()
     {
-        abort(404);
+      $user = new User();
+
+      // foreach ($user->roles as $role) {
+      //     $role_id[] = $role->id;
+      //     $role_name[] = $role->display_name;
+      // }
+
+    return view('auth.register', compact('user'/*, 'role_id', 'role_name'*/));
+    }
+
+    public function store(Requests\UserStoreRequest $request)
+    {
+        $request->merge([
+            'password' => bcrypt($request->password)
+        ]);
+
+        $user = User::create($request->all());
+
+        // $user->attachRoles($request->roles);
+
+        Toastr::success('New user was created successfully!, Please wait for acception from admin.', 'Create User');
+
+        return redirect('/login');
     }
 }

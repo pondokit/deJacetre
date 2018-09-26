@@ -124,12 +124,13 @@
 
   // Bind a function to a Event (the full Laravel class)
   channel.bind('App\\Events\\NewComment', function(data) {
+
       // this is called when the event notification is received...
       $('.comment-wrapper').append(`
         <li>
           <a href="#">
             <div class="pull-left">
-              <img src="{{ Avatar::create('kentut neraka')->toBase64() }}" />
+              <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
             </div>
             <h4>
               `+data.author+`
@@ -139,9 +140,18 @@
           </a>
         </li>        
       `);
-    $('.comment-warning').append(`
-        1
-      `);
+
+      // notification label
+      var label = $('.comment-label span');
+      var latest = parseInt(label.text());
+      var count = latest + 1; 
+      $(document).ready(function(){
+        if ( count > 0 ) {
+          label.show();
+        }
+        label.text(count);
+      });
+      
   });
 
   // Sidebar Dropdown
