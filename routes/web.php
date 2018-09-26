@@ -142,4 +142,3 @@ Route::post('/register', [
 	'uses'	=> 'Auth\RegisterController@store',
 	'as'	=> 'register.store'
 ]);
-

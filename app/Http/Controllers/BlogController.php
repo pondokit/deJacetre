@@ -95,9 +95,13 @@ class BlogController extends Controller
         $about = About::first();
         return view('blog.about', compact('about'));
     }
-  
     public function contact()
     {
-      return view('blog.contact', compact('post'));
+        return view('blog.contact', compact('post'));
+    }
+    
+    public function contact()
+    {
+        return view('blog.contact', compact('post'));
     }
 }
