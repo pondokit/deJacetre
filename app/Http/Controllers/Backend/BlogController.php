@@ -245,7 +245,7 @@ class BlogController extends BackendController
     {
         if($request->check == 'publish') {
             $request->validate([
-                'published_at' => 'date_format: Y-m-d H:i:s'
+                'published_at' => 'date_format:Y-m-d H:i:s'
             ]);
         } else {
             unset($request['published_at']);

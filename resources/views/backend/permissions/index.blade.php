@@ -38,6 +38,9 @@
       <div class="box-body">
         @include('backend.partials.message')      	
         @include('backend.permissions.table')
+        <div class="pull-right">
+          {{ $permissions->links() }}
+        </div>
       </div>
       <!-- /.box-body -->
 

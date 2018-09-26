@@ -32,11 +32,6 @@
           <span class="help-block">{{ $errors->first('slug') }}</span>
         @endif
       </div>
-
-      <div class="form-group excerpt">
-        {!! Form::label('excerpt') !!}
-        {!! Form::textarea('excerpt', null, ['class' => 'form-control']) !!}
-      </div>
       <div class="form-group {{ $errors->has('body') ? 'has-error' : '' }}">
         {!! Form::label('body') !!}
         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
@@ -74,7 +69,7 @@
     </div>
     <div class="box-footer">
       <div class="pull-left">
-        <a id="draft-btn" href="" class="btn btn-default">Save Draft</a> 
+        <a id="draft-btn" href="" class="btn btn-default">Save Draft</a>
       </div>
       <div class="pull-right">
         {!! Form::hidden('check', null, ['class' => 'check']) !!}
@@ -104,7 +99,7 @@
       <div class="form-group {{ $errors->has('post_tags') ? 'has-error' : '' }}">
         {!! Form::text('post_tags', null, ['class' => 'form-control']) !!}
         <small class="text-muted">e.g. : Tag 1, Tag 2, Tag 3</small>
-        
+
         @if ($errors->has('post_tags'))
           <span class="help-block">{{ $errors->first('post_tags') }}</span>
         @endif

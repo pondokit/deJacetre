@@ -7,7 +7,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Permissions
+      Sosmed
       <small>Manage Sosmed</small>
     </h1>
     <ol class="breadcrumb">

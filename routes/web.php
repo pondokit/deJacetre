@@ -16,6 +16,11 @@ Route::get('/', [
 	'as' 	=> 'blog'
 ]);
 
+Route::get('/contact', [
+	'uses' 	=> 'BlogController@contact',
+	'as' 	=> 'contact'
+]);
+
 Route::get('/blog/{post}', [
 	'uses' 	=> 'BlogController@show',
 	'as' 	=> 'blog.post'
@@ -112,3 +117,14 @@ Route::put('/backend/sosmeds', [
 	'as'	=> 'sosmeds.update'
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');
+
+Route::resource('/backend/tags', 'Backend\TagsController');
+Route::get('/register', [
+	'uses'	=> 'Auth\RegisterController@register',
+	'as'	=> 'register.create'
+]);
+
+Route::post('/register', [
+	'uses'	=> 'Auth\RegisterController@store',
+	'as'	=> 'register.store'
+]);
