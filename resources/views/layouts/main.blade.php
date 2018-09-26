@@ -22,7 +22,7 @@
 	    <ul class="nav navbar-nav">
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
 	      <li class="@yield('post')"><a href="#">Blog</a></li>
-	      <li><a href="#">Contact</a></li>
+	      <li><a href="{{ route('contact') }}">Contact</a></li>
 	      <li class="@yield('about')"><a href="{{ route('about') }}">About</a></li>
 	    </ul>
 	    <form class="navbar-form navbar-right" action="{{ route('blog') }}">
