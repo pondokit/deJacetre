@@ -57,7 +57,6 @@ $url1 = request()->segment(1);
             </span>
           </a>
           <ul class="treeview-menu">
-
             <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
               <a href=" {{route('blog.create')}} ">
                 <i class="fa fa-circle-o"></i><span>New Post</span>
