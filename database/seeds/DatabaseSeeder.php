@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionsTableSeeder::class);
         $this->call(TagsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
-        $this->call(SosmedsTableSeeder::class);
+        // $this->call(SosmedsTableSeeder::class);
     }
 }

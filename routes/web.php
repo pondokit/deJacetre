@@ -107,13 +107,13 @@ Route::get('/pusher', function () {
 	event(new App\Events\NewComment('livi'));
 	return redirect()->route('blog.data');
 });
-Route::get('/backend/sosmeds', [
-	'uses'	=> 'Backend\SosmedController@index',
-	'as'	=> 'sosmeds.index'
+Route::get('/backend/contact', [
+	'uses'	=> 'Backend\ContactController@index',
+	'as'	=> 'contact.index'
 ]);
 
-Route::put('/backend/sosmeds', [
-	'uses'	=> 'Backend\SosmedController@update',
-	'as'	=> 'sosmeds.update'
+Route::put('/backend/contact', [
+	'uses'	=> 'Backend\ContactController@update',
+	'as'	=> 'contact.update'
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');

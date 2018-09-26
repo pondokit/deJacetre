@@ -47,11 +47,11 @@
 					&copy;<a href="#">De Jacetre</a> 2017. All right reserved.
 				</div>
 				<div class="social pull-right">
-					<a href=" {{$sosmeds->facebook}} "><i class="fa fa-facebook"></i></a>
-					<a href="{{$sosmeds->instagram}}"><i class="fa fa-instagram"></i></a>
-					<a href="{{$sosmeds->twitter}}"><i class="fa fa-twitter"></i></a>
-					<a href="{{$sosmeds->github}}"><i class="fa fa-github"></i></a>
-					<a href="{{$sosmeds->youtube}}"><i class="fa fa-youtube"></i></a>
+					<a href=" {{$contact->facebook}} "><i class="fa fa-facebook"></i></a>
+					<a href="{{$contact->instagram}}"><i class="fa fa-instagram"></i></a>
+					<a href="{{$contact->twitter}}"><i class="fa fa-twitter"></i></a>
+					<a href="{{$contact->github}}"><i class="fa fa-github"></i></a>
+					<a href="{{$contact->youtube}}"><i class="fa fa-youtube"></i></a>
 				</div>
 			</div>
 		</div>

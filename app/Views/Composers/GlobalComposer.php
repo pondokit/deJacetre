@@ -3,7 +3,7 @@
 namespace App\Views\Composers;
 
 use Illuminate\View\View;
-use App\Sosmed;
+use App\Contact;
 
 class GlobalComposer
 {
@@ -14,8 +14,8 @@ class GlobalComposer
 
 	private function composeSosmeds(View $view)
 	{
-		$sosmeds = Sosmed::find(1);
+		$sosmeds = Contact::find(1);
 
-		$view->with('sosmeds', $sosmeds);
+		$view->with('contact', $sosmeds);
 	}
 }

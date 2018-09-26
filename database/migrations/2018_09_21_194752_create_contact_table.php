@@ -19,6 +19,11 @@ class CreateContactTable extends Migration
             $table->string('telepon');
             $table->string('email')->unique();
             $table->text('alamat');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('github');
+            $table->string('twitter');
+            $table->string('youtube');
             $table->timestamps();
         });
     }

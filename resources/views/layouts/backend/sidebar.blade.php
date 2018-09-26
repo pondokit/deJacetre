@@ -37,11 +37,11 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class=" 
-        {{ 
-          (request()->is('backend/blog')) || 
-          (request()->is('backend/blog/create')) || 
-          (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+        <li class="
+        {{
+          (request()->is('backend/blog')) ||
+          (request()->is('backend/blog/create')) ||
+          (request()->is('backend/blog/*/edit')) ? 'active' : ''
         }} ">
           <a href="{{ route('blog.index') }}">
             <i class="fa fa-book"></i> <span>All Posts</span>
@@ -49,10 +49,10 @@ $url1 = request()->segment(1);
         </li>
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="
-        {{ 
-          (request()->is('backend/categories')) || 
-          (request()->is('backend/categories/create')) || 
-          (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+        {{
+          (request()->is('backend/categories')) ||
+          (request()->is('backend/categories/create')) ||
+          (request()->is('backend/categories/*/edit')) ? 'active' : ''
         }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
@@ -104,8 +104,8 @@ $url1 = request()->segment(1);
           </a>
           <ul class="treeview-menu">
             <li class="
-            {{ 
-              request()->is('stats/summary') ? 'active' : '' 
+            {{
+              request()->is('stats/summary') ? 'active' : ''
             }}">
               <a href=" {{route('visitortracker.summary')}} ">
                 <i class="fa fa-circle-o"></i> Summary
@@ -199,15 +199,15 @@ $url1 = request()->segment(1);
             </li>
           </ul>
         </li>
-        <li class="{{ request()->is('backend/sosmeds') ? 'active' : '' }}">
-          <a href="{{ route('sosmeds.index') }}">
-            <i class="fa fa-rss-square"></i> <span>Sosmeds</span>
+        <li class="{{ request()->is('backend/contact') ? 'active' : '' }}">
+          <a href="{{ route('contact.index') }}">
+            <i class="fa fa-rss-square"></i> <span>Contact</span>
           </a>
         </li>
-        <li class="  
-        {{ 
-          (request()->is('backend/comments')) || 
-          (request()->is('backend/comments/*/edit')) ? 'active' : '' 
+        <li class="
+        {{
+          (request()->is('backend/comments')) ||
+          (request()->is('backend/comments/*/edit')) ? 'active' : ''
         }}">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-comment"></i> <span>Comments</span>

@@ -7,7 +7,6 @@ use App\Category;
 use App\User;
 use App\Post;
 use App\Tag;
-use App\Sosmed;
 use App\Contact;
 
 class BlogController extends Controller

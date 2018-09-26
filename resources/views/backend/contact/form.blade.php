@@ -5,6 +5,41 @@
 
     <!-- box-body -->
     <div class="box-body">
+      <div class="form-group {{ $errors->has('nama') ? 'has-error' : '' }}">
+        {!! Form::label('nama') !!}
+        {!! Form::text('nama', null,  ['class' => 'form-control', 'id' => 'nama']) !!}
+
+        @if ($errors->has('nama'))
+          <span class="help-block">{{ $errors->first('nama') }}</span>
+        @endif
+      </div>
+
+      <div class="form-group {{ $errors->has('telepon') ? 'has-error' : '' }}">
+        {!! Form::label('telepon') !!}
+        {!! Form::text('telepon', null,  ['class' => 'form-control', 'id' => 'telepon']) !!}
+
+        @if ($errors->has('telepon'))
+          <span class="help-block">{{ $errors->first('telepon') }}</span>
+        @endif
+      </div>
+
+      <div class="form-group {{ $errors->has('alamat') ? 'has-error' : '' }}">
+        {!! Form::label('alamat') !!}
+        {!! Form::text('alamat', null,  ['class' => 'form-control', 'id' => 'alamat']) !!}
+
+        @if ($errors->has('alamat'))
+          <span class="help-block">{{ $errors->first('alamat') }}</span>
+        @endif
+      </div>
+
+      <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
+        {!! Form::label('email') !!}
+        {!! Form::text('email', null,  ['class' => 'form-control', 'id' => 'email']) !!}
+
+        @if ($errors->has('email'))
+          <span class="help-block">{{ $errors->first('email') }}</span>
+        @endif
+      </div>
 
       <div class="form-group {{ $errors->has('facebook') ? 'has-error' : '' }}">
         {!! Form::label('facebook') !!}
