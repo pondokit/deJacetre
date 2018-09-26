@@ -17,7 +17,7 @@
           <h2 class="title">About Moi</h2>
         </div>
         <div class="caption">
-            <p>{!! $about->about !!}</p>
+            <p>{!! $about->about_html !!}</p>
         </div>
       </div>
 	</div><!-- Content Closer -->
