@@ -89,17 +89,10 @@ class BlogController extends Controller
         return view('blog.show', compact('post', 'postComments'));
     }
 
-<<<<<<< HEAD
     public function gallery()
     {
         $gallery = Post::all();
 
         return view('blog.gallery', compact('gallery'));
-=======
-    public function contact()
-    {
-      return view('blog.contact', compact('post'));
-
->>>>>>> parent of 7e408ee... Merge branch 'abid-81'
     }
 }
