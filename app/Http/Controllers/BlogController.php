@@ -100,8 +100,8 @@ class BlogController extends Controller
         return view('blog.contact', compact('post'));
     }
     
-    public function contact()
-    {
-        return view('blog.contact', compact('post'));
-    }
+    // public function contact()
+    // {
+    //     return view('blog.contact', compact('post'));
+    // }
 }
