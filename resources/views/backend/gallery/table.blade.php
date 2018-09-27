@@ -13,11 +13,8 @@
 				<form action=" {{ route('gallery.destroy', $galery->id) }} " method="post">
                 	{{csrf_field()}}
                 	{{method_field("DELETE")}}
-                	<a href="{{route('gallery.edit', $galery->id)}}" class="btn btn-xs btn-default">
-                		<i class="fa fa-edit"></i>
-                	</a>
                 	{!! $delete_button !!}
-        </form>
+        		</form>
 			</td>
 			<td> {{ $galery->image }} </td>
 		</tr>
