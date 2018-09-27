@@ -31,15 +31,7 @@ class PostsTableSeeder extends Seeder
     		$posts[] = [
     			'author_id'      => rand(1, 5),
     			'title'          => $faker->sentence(rand(2, 3)),
-<<<<<<< HEAD
-<<<<<<< HEAD
     			// 'excerpt'        => $faker->text(rand(250, 300)),
-=======
-    			'excerpt'        => $faker->text(rand(250, 300)),
->>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
-=======
-    			'excerpt'        => $faker->text(rand(250, 300)),
->>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
     			'body'           => $faker->paragraphs(rand(10, 15), true),
     			'slug'           => $faker->slug(),
     			'image'          => $image,
