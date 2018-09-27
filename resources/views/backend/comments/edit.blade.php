@@ -7,12 +7,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Comments
+      Permissions
       <small>Edit Comment</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li><a href="{{ route('comments.index') }}">Comments</a></li>
+      <li><a href="{{ route('comments.index') }}">Permissions</a></li>
       <li class="active">Edit Comment</li>
     </ol>
   </section>
