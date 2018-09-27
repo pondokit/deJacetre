@@ -48,7 +48,7 @@
 
     <div class="box-footer">
       <button type="submit" class="btn btn-primary" id="save-btn">Submit  </button>
-      <a href="{{ route('permissions.index') }}" class="btn btn-default">Cancel</a>
+      <a href="{{ route('comments.index') }}" class="btn btn-default">Cancel</a>
     </div>
 
   </div>

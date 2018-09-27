@@ -106,7 +106,9 @@
 <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
 <script>
   $(document).ready(function () {
-    $('.sidebar-menu').tree()
+    $('.sidebar-menu').tree({
+      animationSpeed: 100,
+    })
   });
   // Enable pusher logging - don't include this in production
   Pusher.logToConsole = true;
@@ -122,12 +124,13 @@
 
   // Bind a function to a Event (the full Laravel class)
   channel.bind('App\\Events\\NewComment', function(data) {
+
       // this is called when the event notification is received...
-      $('.comment-wrapper').append(`
+      $('.comment-wrapper').prepend(`
         <li>
           <a href="#">
             <div class="pull-left">
-              <img src="{{ Avatar::create('kentut neraka')->toBase64() }}" />
+              <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
             </div>
             <h4>
               `+data.author+`
@@ -137,9 +140,52 @@
           </a>
         </li>        
       `);
-    $('.comment-warning').append(`
-        1
-      `);
+
+      // notification label
+      var label = $('.comment-label span');
+      var latest = parseInt(label.text());
+      var count = latest + 1; 
+      $(document).ready(function(){
+        if ( count > 0 ) {
+          label.show();
+        }
+        label.text(count);
+      });
+      
+  });
+
+  // Sidebar Dropdown
+  $(document).ready(function(){
+    $('.treeview').mouseenter(function(){
+      if(!($(this).hasClass('menu-open'))){
+        $("a", this).click();
+      }
+    });
+    $('.treeview').mouseleave(function(){
+      $("a", this).click();
+    });
+
+    // ============== Kode Mansukh ================
+    // $('.sidebar-menu').mouseleave(function(){
+    //   $('.treeview a').clearQueue();
+    //   $('.treeview a').stop(true, true);
+    //   $('.treeview ul').clearQueue();
+    //   $('.treeview ul').stop(true, true);
+    //   // if ($('.treeview-menu').css('display') == 'block'){
+    //   //   $('.treeview-menu').css('display', 'none');
+    //   // }
+    // });
+    // $('.sidebar-menu>li').mouseenter(function(){
+    //   // if (!$(this).hasClass('treeview')){
+    //     $('.treeview a').clearQueue();
+    //     $('.treeview a').stop(true, true);
+    //     $('.treeview ul').clearQueue();
+    //     $('.treeview ul').stop(true, true);
+    //     // if ($('.treeview-menu').css('display') == 'block'){
+    //     //   $('.treeview-menu').css('display', 'none');
+    //     // }
+    //   // }
+    // });
   });
 </script>
 
