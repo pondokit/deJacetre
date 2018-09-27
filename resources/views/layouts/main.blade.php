@@ -21,8 +21,13 @@
 	  <div class="container">
 	    <ul class="nav navbar-nav">
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
+<<<<<<< HEAD
 	      <li class="@yield('gallery')"><a href=" {{route('gallery')}} ">Galerry</a></li>
 	      <li><a href="#">Contact</a></li>
+=======
+	      <li class="@yield('post')"><a href="#">Blog</a></li>
+	      <li><a href="{{ route('contact') }}">Contact</a></li>
+>>>>>>> parent of 7e408ee... Merge branch 'abid-81'
 	      <li><a href="#">About</a></li>
 	    </ul>
 	    <form class="navbar-form navbar-right" action="{{ route('blog') }}">

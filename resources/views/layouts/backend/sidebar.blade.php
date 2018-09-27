@@ -46,6 +46,44 @@ $url1 = request()->segment(1);
           <a href="{{ route('blog.index') }}">
             <i class="fa fa-book"></i> <span>All Posts</span>
           </a>
+<<<<<<< HEAD
+=======
+          <ul class="treeview-menu">
+
+            <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
+              <a href=" {{route('blog.create')}} ">
+                <i class="fa fa-circle-o"></i><span>New Post</span>
+              </a>
+            </li>
+
+            <li class=" 
+            {{ 
+              (request()->is('backend/blog')) || 
+              (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+            }} ">
+              <a href="{{ route('blog.index') }}">
+                <i class="fa fa-circle-o"></i> <span>All Posts</span>
+              </a>
+            </li>
+
+            @if (check_user_permissions(request(), "Categories@index"))
+            <li class="
+            {{ 
+              (request()->is('backend/categories')) || 
+              (request()->is('backend/categories/create')) || 
+              (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+            }}">
+              <a href="{{ route('categories.index') }}">
+                <i class="fa fa-circle-o"></i> <span>Category</span>
+              </a>
+            </li>
+            @endif
+            
+            <li class="{{request()->is('backend/tags') ? 'active' : ''}}">
+              <a href=" {{route('tags.index')}} "><i class="fa fa-circle-o"></i>Tags</a>
+            </li>
+          </ul>
+>>>>>>> parent of 7e408ee... Merge branch 'abid-81'
         </li>
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="
@@ -213,6 +251,7 @@ $url1 = request()->segment(1);
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
         </li>
+<<<<<<< HEAD
 
         <li class="  
         {{ 
@@ -224,6 +263,8 @@ $url1 = request()->segment(1);
             <i class="fa fa-picture-o"></i> <span>Gallery</span>
           </a>
         </li>
+=======
+>>>>>>> parent of 7e408ee... Merge branch 'abid-81'
       </ul>
     </section>
     <!-- /.sidebar -->
