@@ -117,6 +117,7 @@ Route::put('/backend/sosmeds', [
 	'as'	=> 'sosmeds.update'
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');
+<<<<<<< HEAD
 
 Route::get('backend/about', [
 	'uses'	=>	'Backend\AboutController@index',
@@ -142,3 +143,5 @@ Route::post('/register', [
 	'uses'	=> 'Auth\RegisterController@store',
 	'as'	=> 'register.store'
 ]);
+=======
+>>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
