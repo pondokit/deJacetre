@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSosmedTable extends Migration
+class CreateGalleryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateSosmedTable extends Migration
      */
     public function up()
     {
-        Schema::create('sosmeds', function (Blueprint $table) {
+        Schema::create('gallery', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('facebook');
-            $table->string('instagram');
-            $table->string('github');
-            $table->string('twitter');
-            $table->string('youtube');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateSosmedTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sosmeds');
+        Schema::dropIfExists('gallery');
     }
 }

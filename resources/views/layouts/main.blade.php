@@ -24,6 +24,7 @@
 	      <li class="@yield('post')"><a href="#">Blog</a></li>
 	      <li><a href="{{ route('contact') }}">Contact</a></li>
 	      <li class="@yield('about')"><a href="{{ route('about') }}">About</a></li>
+	      <li class="@yield('gallery')"><a href=" {{route('gallery')}} ">Galerry</a></li>
 	    </ul>
 	    <form class="navbar-form navbar-right" action="{{ route('blog') }}">
 	      <div class="input-group">

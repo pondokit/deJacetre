@@ -104,4 +104,10 @@ class BlogController extends Controller
     // {
     //     return view('blog.contact', compact('post'));
     // }
+    public function gallery()
+    {
+        $gallery = Post::all();
+
+        return view('blog.gallery', compact('gallery'));
+    }
 }

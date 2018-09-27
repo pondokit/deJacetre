@@ -251,6 +251,16 @@ $url1 = request()->segment(1);
             <i class="fa fa-info"></i> <span>About</span>
           </a>
         </li>
+        <li class="  
+        {{ 
+          (request()->is('backend/gallery')) || 
+          (request()->is('backend/gallery/*/edit')) || 
+          (request()->is('backend/gallery/create')) ? 'active' : '' 
+        }}">
+          <a href="{{ route('gallery.index') }}">
+            <i class="fa fa-picture-o"></i> <span>Gallery</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
