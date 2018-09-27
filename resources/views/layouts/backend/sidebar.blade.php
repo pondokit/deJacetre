@@ -46,60 +46,11 @@ $url1 = request()->segment(1);
           (request()->is('backend/categories/create')) ||
           (request()->is('backend/categories/*/edit')) ||
           (request()->is('backend/blog/create')) || 
-<<<<<<< 3fef628c645e1526a641f6d0ad13cf2c025bfb41
-          (request()->is('backend/blog/*/edit')) ||
-          (request()->is('backend/tags')) 
-          ? 'active' : '' }}
-        ">
-          <a href="#">
-            <i class="glyphicon glyphicon-pushpin"></i> <span>Posts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-=======
           (request()->is('backend/blog/*/edit')) ? 'active' : '' 
         }} ">
           <a href="{{ route('blog.index') }}">
             <i class="fa fa-book"></i> <span>All Posts</span>
           </a>
-<<<<<<< HEAD
-=======
-          <ul class="treeview-menu">
-
-            <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
-              <a href=" {{route('blog.create')}} ">
-                <i class="fa fa-circle-o"></i><span>New Post</span>
-              </a>
-            </li>
-
-            <li class=" 
-            {{ 
-              (request()->is('backend/blog')) || 
-              (request()->is('backend/blog/*/edit')) ? 'active' : '' 
-            }} ">
-              <a href="{{ route('blog.index') }}">
-                <i class="fa fa-circle-o"></i> <span>All Posts</span>
-              </a>
-            </li>
-
-            @if (check_user_permissions(request(), "Categories@index"))
-            <li class="
-            {{ 
-              (request()->is('backend/categories')) || 
-              (request()->is('backend/categories/create')) || 
-              (request()->is('backend/categories/*/edit')) ? 'active' : '' 
-            }}">
-              <a href="{{ route('categories.index') }}">
-                <i class="fa fa-circle-o"></i> <span>Category</span>
-              </a>
-            </li>
-            @endif
-            
-            <li class="{{request()->is('backend/tags') ? 'active' : ''}}">
-              <a href=" {{route('tags.index')}} "><i class="fa fa-circle-o"></i>Tags</a>
-            </li>
-          </ul>
->>>>>>> parent of 7e408ee... Merge branch 'abid-81'
         </li>
         @if (check_user_permissions(request(), "Categories@index"))
         <li class="
@@ -110,7 +61,6 @@ $url1 = request()->segment(1);
         }}">
           <a href="{{ route('categories.index') }}">
             <i class="fa fa-user"></i> <span>Category</span>
->>>>>>> revert
           </a>
           <ul class="treeview-menu">
             <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">

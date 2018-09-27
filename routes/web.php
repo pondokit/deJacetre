@@ -143,7 +143,6 @@ Route::post('/register', [
 	'as'	=> 'register.store'
 ]);
 
-<<<<<<< HEAD
 Route::get('/gallery', [
 	'uses' => 'GalleryController@index',
 	'as' => 'gallery'
@@ -151,15 +150,3 @@ Route::get('/gallery', [
 
 Route::resource('/backend/gallery', 'Backend\GalleryController');	
 
-=======
-Route::resource('/backend/tags', 'Backend\TagsController');
-Route::get('/register', [
-	'uses'	=> 'Auth\RegisterController@register',
-	'as'	=> 'register.create'
-]);
-
-Route::post('/register', [
-	'uses'	=> 'Auth\RegisterController@store',
-	'as'	=> 'register.store'
-]);
->>>>>>> parent of 7e408ee... Merge branch 'abid-81'
