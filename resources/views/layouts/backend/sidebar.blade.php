@@ -247,11 +247,14 @@ $url1 = request()->segment(1);
           </a>
         </li>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <li class="{{ (request()->is('backend/about')) ? 'active' : '' }}">
           <a href="{{ route('about.index') }}">
             <i class="fa fa-info"></i> <span>About</span>
           </a>
         </li>
+=======
+>>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
 =======
 >>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
       </ul>

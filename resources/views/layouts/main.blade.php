@@ -23,9 +23,12 @@
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
 	      <li class="@yield('post')"><a href="#">Blog</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      <li><a href="{{ route('contact') }}">Contact</a></li>
 	      <li class="@yield('about')"><a href="{{ route('about') }}">About</a></li>
 =======
+=======
+>>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
 	      <li><a href="#">Contact</a></li>
 	      <li><a href="#">About</a></li>
 >>>>>>> parent of 9950087... Replace Blog menu wtih Galery on frontend navbar
