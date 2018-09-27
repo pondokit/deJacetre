@@ -21,7 +21,7 @@
 	  <div class="container">
 	    <ul class="nav navbar-nav">
 	      <li class="@yield('home')"><a href="{{ route('blog') }}">Home</a></li>
-	      <li class="@yield('post')"><a href="#">Blog</a></li>
+	      <li class="@yield('gallery')"><a href=" {{route('gallery')}} ">Galerry</a></li>
 	      <li><a href="#">Contact</a></li>
 	      <li><a href="#">About</a></li>
 	    </ul>

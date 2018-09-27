@@ -111,4 +111,12 @@ Route::put('/backend/sosmeds', [
 	'uses'	=> 'Backend\SosmedController@update',
 	'as'	=> 'sosmeds.update'
 ]);
-Route::resource('/backend/comments', 'Backend\CommentsController');
+Route::resource('/backend/comments', 'Backend\CommentsController');	
+
+Route::get('/gallery', [
+	'uses' => 'GalleryController@index',
+	'as' => 'gallery'
+]);
+
+Route::resource('/backend/gallery', 'Backend\GalleryController');	
+

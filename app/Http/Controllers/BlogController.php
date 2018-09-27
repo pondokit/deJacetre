@@ -88,4 +88,11 @@ class BlogController extends Controller
 
         return view('blog.show', compact('post', 'postComments'));
     }
+
+    public function gallery()
+    {
+        $gallery = Post::all();
+
+        return view('blog.gallery', compact('gallery'));
+    }
 }
