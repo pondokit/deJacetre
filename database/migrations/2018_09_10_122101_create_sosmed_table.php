@@ -31,6 +31,6 @@ class CreateSosmedTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sosmeds');
+        Schema::dropIfExists('sosmed');
     }
 }

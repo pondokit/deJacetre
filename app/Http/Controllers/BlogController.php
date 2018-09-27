@@ -100,14 +100,8 @@ class BlogController extends Controller
         return view('blog.contact', compact('post'));
     }
     
-    // public function contact()
-    // {
-    //     return view('blog.contact', compact('post'));
-    // }
-    public function gallery()
+    public function contact()
     {
-        $gallery = Post::all();
-
-        return view('blog.gallery', compact('gallery'));
+        return view('blog.contact', compact('post'));
     }
 }

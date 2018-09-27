@@ -142,11 +142,3 @@ Route::post('/register', [
 	'uses'	=> 'Auth\RegisterController@store',
 	'as'	=> 'register.store'
 ]);
-
-Route::get('/gallery', [
-	'uses' => 'GalleryController@index',
-	'as' => 'gallery'
-]);
-
-Route::resource('/backend/gallery', 'Backend\GalleryController');	
-

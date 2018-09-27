@@ -46,21 +46,15 @@ $url1 = request()->segment(1);
           (request()->is('backend/categories/create')) ||
           (request()->is('backend/categories/*/edit')) ||
           (request()->is('backend/blog/create')) || 
-          (request()->is('backend/blog/*/edit')) ? 'active' : '' 
-        }} ">
-          <a href="{{ route('blog.index') }}">
-            <i class="fa fa-book"></i> <span>All Posts</span>
-          </a>
-        </li>
-        @if (check_user_permissions(request(), "Categories@index"))
-        <li class="
-        {{ 
-          (request()->is('backend/categories')) || 
-          (request()->is('backend/categories/create')) || 
-          (request()->is('backend/categories/*/edit')) ? 'active' : '' 
-        }}">
-          <a href="{{ route('categories.index') }}">
-            <i class="fa fa-user"></i> <span>Category</span>
+          (request()->is('backend/blog/*/edit')) ||
+          (request()->is('backend/tags')) 
+          ? 'active' : '' }}
+        ">
+          <a href="#">
+            <i class="glyphicon glyphicon-pushpin"></i> <span>Posts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
