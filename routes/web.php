@@ -117,7 +117,6 @@ Route::put('/backend/sosmeds', [
 	'as'	=> 'sosmeds.update'
 ]);
 Route::resource('/backend/comments', 'Backend\CommentsController');
-
 Route::get('backend/about', [
 	'uses'	=>	'Backend\AboutController@index',
 	'as'	=>	'about.index'
