@@ -134,7 +134,6 @@
             </div>
             <h4>
               `+data.author+`
-              <small><i class="fa fa-clock-o"></i></small>
             </h4>
             <p>`+data.comment+`</p>
           </a>
