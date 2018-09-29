@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('home', 'active')
+@section('contact', 'active')
 
 @section('content')
 
@@ -16,39 +16,39 @@
         <ul>
           <li class="clearfix" style="margin-right:30px">
             <label for="input-name">Name</label>
-            <input type="text" name="name" id="input-name" class="text-input" value="{{$contact->nama}}" disabled>
+            {{$contact->nama}}
           </li>
           <li class="clearfix" style="margin-right:30px">
             <label for="input-phone">Phone Number</label>
-            <input type="text" name="phone" id="input-phone" value="{{$contact->telepon	}}" class="text-input" placeholder="eg. (+32).81.81.37.00" disabled>
+            {{$contact->telepon	}}
           </li>
           <li class="clearfix" style="margin-right:30px">
             <label for="input-email">Email</label>
-            <input type="text" name="email" id="input-email" class="text-input" value="{{$contact->email}}" disabled>
+            {{$contact->email}}
           </li>
           <li class="clearfix" style="margin-right:30px">
             <label for="textarea-question">Alamat</label>
-            <textarea name="question" rows="5" cols="40" id="textarea-question" class="text-input" disabled>{{$contact->alamat}}</textarea>
+            {{$contact->alamat}}
           </li>
 					<li class="clearfix" style="margin-right:30px">
             <label for="input-email">Facebook</label>
-            <input type="text" name="facebook" id="input-email" class="text-input" value="{{$contact->facebook}}" disabled>
+            {{$contact->facebook}}
           </li>
 					<li class="clearfix" style="margin-right:30px">
             <label for="input-email">Instagram</label>
-            <input type="text" name="instagram" id="input-email" class="text-input" value="{{$contact->instagram}}" disabled>
+          {{$contact->instagram}}
           </li>
 					<li class="clearfix" style="margin-right:30px">
             <label for="input-email">GitHub</label>
-            <input type="text" name="github" id="input-email" class="text-input" value="{{$contact->github}}" disabled>
+            {{$contact->github}}
           </li>
 					<li class="clearfix" style="margin-right:30px">
             <label for="input-email">Twitter</label>
-            <input type="text" name="twitter" id="input-email" class="text-input" value="{{$contact->twitter}}" disabled>
+          	{{$contact->twitter}}
           </li>
 					<li class="clearfix" style="margin-right:30px">
             <label for="input-email">Youtube</label>
-            <input type="text" name="youtube" id="input-email" class="text-input" value="{{$contact->youtube}}" disabled>
+          {{$contact->youtube}}
           </li>
 
 					{{csrf_field()}}
