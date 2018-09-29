@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Http\Controllers\Controller;
 use App\Tag;
 
@@ -84,6 +85,11 @@ class TagsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+
+        Toastr::success('Tags was deleted successfully!', 'Delete Tags');
+
+        return redirect('backend/tags');
     }
 }

@@ -25,9 +25,6 @@
 
     	<!-- box-header -->
       <div class="box-header with-border clearfix">
-        <div class="pull-left">
-          <a href="{{ route('tags.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
-        </div>
         <div class="box-tools pull-right" style="padding: 7px 0;">
           
         </div>
