@@ -140,6 +140,7 @@
           </a>
         </li>        
       `);
+      $('.chipchip').remove();
 
       // notification label
       var label = $('.comment-label span');
