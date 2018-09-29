@@ -25,6 +25,14 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle comment-label" data-toggle="dropdown">
+              <i class="fa fa-users"></i>
+              <span class="label label-warning">
+                5
+              </span>
+            </a>
+          </li>
+          <li class="dropdown messages-menu">
 
             <!-- Label -->
             <a href="#" class="dropdown-toggle comment-label" data-toggle="dropdown">
@@ -57,7 +65,7 @@
                         </h4>
                         <p>{{ Str::words($com->body, 4, '...') }}</p>
                       </a>
-                    </li> 
+                    </li>
                   @endforeach
                 </ul>
               </li>
@@ -77,7 +85,7 @@
                 <img src="{{ ($avatar = App\User::find($currentUser->id)->image) ? '/image/'.$avatar : $currentUser->gravatar() }}" />
                 <p>
                   <?php $userRole = $currentUser->roles->first() !== NULL ? $currentUser->roles->first()->display_name : "Noob" ?>
-                  
+
                   {{ $currentUser->name }} - {{$userRole}}
                   <!-- <small>Member since Nov. 2012</small> -->
                 </p>
