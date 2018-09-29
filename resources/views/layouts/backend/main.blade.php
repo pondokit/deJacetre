@@ -138,25 +138,23 @@
             </h4>
             <p>`+data.comment+`</p>
           </a>
-        </li>
+        </li>        
       `);
-      $(".chipchip").remove();
-
 
       // notification label
       var label = $('.comment-label span');
-      var shout = $('.doodoo span');
-      var shoutv2 = $('.doodoo span span');
+      var notice = $('.comment-header > p');
       var latest = parseInt(label.text());
       var count = latest + 1;
       $(document).ready(function(){
+        var plurs = count > 1 ? 's':'';
         if ( count > 0 ) {
           label.show();
-          shout.show();
         }
         label.text(count);
-        shoutv2.text(count);
+        notice.text('You have '+count+' notification'+plurs);
       });
+      
   });
 
   // Sidebar Dropdown

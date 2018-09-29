@@ -40,7 +40,7 @@
                 @if($notif > 0)
                   <p>You have {{ $notif }} {{ str_plural('notification', $notif) }}</p>
                 @else
-                  <p><span class="doodoo" style="display: none;">You have <span></span> notification</span><span class="chipchip">You don't have any notification</span></p>
+                  <p>You don't have any notification</p>
                 @endif
               </li>
               <li>
@@ -53,7 +53,6 @@
                         </div>
                         <h4>
                           {{ $com->author_name }}
-                          <small><i class="fa fa-clock-o"></i></small>
                         </h4>
                         <p>{{ Str::words($com->body, 4, '...') }}</p>
                       </a>
