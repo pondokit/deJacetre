@@ -128,7 +128,7 @@
       // this is called when the event notification is received...
       $('.comment-wrapper').prepend(`
         <li>
-          <a href="#">
+          <a href="{{ route('comments.index') }}">
             <div class="pull-left">
               <img src="/AdminLTE-2.4.3/dist/img/user-not.png" />
             </div>
@@ -138,21 +138,25 @@
             </h4>
             <p>`+data.comment+`</p>
           </a>
-        </li>        
+        </li>
       `);
-      $('.chipchip').remove();
+      $(".chipchip").remove();
+
 
       // notification label
       var label = $('.comment-label span');
+      var shout = $('.doodoo span');
+      var shoutv2 = $('.doodoo span span');
       var latest = parseInt(label.text());
-      var count = latest + 1; 
+      var count = latest + 1;
       $(document).ready(function(){
         if ( count > 0 ) {
           label.show();
+          shout.show();
         }
         label.text(count);
+        shoutv2.text(count);
       });
-      
   });
 
   // Sidebar Dropdown

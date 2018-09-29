@@ -40,7 +40,7 @@
                 @if($notif > 0)
                   <p>You have {{ $notif }} {{ str_plural('notification', $notif) }}</p>
                 @else
-                  <p class="chipchip">You don't have any notification</p>
+                  <p><span class="doodoo" style="display: none;">You have <span></span> notification</span><span class="chipchip">You don't have any notification</span></p>
                 @endif
               </li>
               <li>
