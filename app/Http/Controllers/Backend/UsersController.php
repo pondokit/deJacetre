@@ -8,7 +8,9 @@ use Laravolt\Avatar\Facade as Avatar;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
+use File;
 
 class UsersController extends BackendController
 {
@@ -78,6 +80,12 @@ class UsersController extends BackendController
      */
     public function store(Requests\UserStoreRequest $request)
     {
+
+        if (File::exists('/image/')) {
+          Storage::makeDirectory('/image/', 777, true);
+        } else {
+          File::makeDirectory(public_path().'/image/');
+        }
         //avatar
         $gambar = str_random(10).".png";
         Avatar::create($request->name)->save("image/".$gambar);

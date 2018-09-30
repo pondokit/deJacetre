@@ -3,6 +3,7 @@ $url4 = request()->segment(4);
 $url3 = request()->segment(3);
 $url2 = request()->segment(2);
 $url1 = request()->segment(1);
+$currentUser = Auth::user();
 ?>
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -10,8 +11,7 @@ $url1 = request()->segment(1);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-
-          <img src="{{ ($avatar = App\User::find(Auth::user()->id)->image) ? '/image/'.$avatar : Auth::user()->gravatar() }}" />
+          <img src="{{ (App\User::find($currentUser->id)->image && file_exists(public_path().'/image/'.App\User::find($currentUser->id)->image)) ? '/image/'.App\User::find($currentUser->id)->image : $currentUser->gravatar() }}" class="user-image" alt="{{ $currentUser->name }}">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -39,15 +39,15 @@ $url1 = request()->segment(1);
           </a>
         </li>
 
-        <li class="treeview 
+        <li class="treeview
         {{
           (request()->is('backend/blog')) ||
           (request()->is('backend/categories')) ||
           (request()->is('backend/categories/create')) ||
           (request()->is('backend/categories/*/edit')) ||
-          (request()->is('backend/blog/create')) || 
+          (request()->is('backend/blog/create')) ||
           (request()->is('backend/blog/*/edit')) ||
-          (request()->is('backend/tags')) 
+          (request()->is('backend/tags'))
           ? 'active' : '' }}
         ">
           <a href="#">
@@ -63,10 +63,10 @@ $url1 = request()->segment(1);
               </a>
             </li>
 
-            <li class=" 
-            {{ 
-              (request()->is('backend/blog')) || 
-              (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+            <li class="
+            {{
+              (request()->is('backend/blog')) ||
+              (request()->is('backend/blog/*/edit')) ? 'active' : ''
             }} ">
               <a href="{{ route('blog.index') }}">
                 <i class="fa fa-circle-o"></i> <span>All Posts</span>
@@ -75,17 +75,17 @@ $url1 = request()->segment(1);
 
             @if (check_user_permissions(request(), "Categories@index"))
             <li class="
-            {{ 
-              (request()->is('backend/categories')) || 
-              (request()->is('backend/categories/create')) || 
-              (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+            {{
+              (request()->is('backend/categories')) ||
+              (request()->is('backend/categories/create')) ||
+              (request()->is('backend/categories/*/edit')) ? 'active' : ''
             }}">
               <a href="{{ route('categories.index') }}">
                 <i class="fa fa-circle-o"></i> <span>Category</span>
               </a>
             </li>
             @endif
-            
+
             <li class="{{request()->is('backend/tags') ? 'active' : ''}}">
               <a href=" {{route('tags.index')}} "><i class="fa fa-circle-o"></i>Tags</a>
             </li>
@@ -137,8 +137,8 @@ $url1 = request()->segment(1);
           </a>
           <ul class="treeview-menu">
             <li class="
-            {{ 
-              request()->is('stats/summary') ? 'active' : '' 
+            {{
+              request()->is('stats/summary') ? 'active' : ''
             }}">
               <a href=" {{route('visitortracker.summary')}} ">
                 <i class="fa fa-circle-o"></i> Summary
@@ -237,10 +237,10 @@ $url1 = request()->segment(1);
             <i class="fa fa-rss-square"></i> <span>Sosmeds</span>
           </a>
         </li>
-        <li class="  
-        {{ 
-          (request()->is('backend/comments')) || 
-          (request()->is('backend/comments/*/edit')) ? 'active' : '' 
+        <li class="
+        {{
+          (request()->is('backend/comments')) ||
+          (request()->is('backend/comments/*/edit')) ? 'active' : ''
         }}">
           <a href="{{ route('comments.index') }}">
             <i class="fa fa-comment"></i> <span>Comments</span>

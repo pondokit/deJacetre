@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use Laravolt\Avatar\Facade as Avatar;
 use App\User;
 
 class HomeController extends BackendController
@@ -20,6 +21,9 @@ class HomeController extends BackendController
 
     public function edit(Request $request)
     {
+        $gambar = str_random(10).".png";
+        Avatar::create($request->name)->save("image/".$gambar);
+
         $user = $request->user();
 
         foreach ($user->roles as $role) {
@@ -32,11 +36,15 @@ class HomeController extends BackendController
 
     public function update(Requests\AccountUpdateRequest $request)
     {
+        // $gambar = str_random(10).".png";
+        // Avatar::create($request->name)->save("image/".$gambar);
+
         $user = $request->user();
 
         if ($request->password == null) {
         	unset($request['password']);
         }
+
 
         $user->update($request->all());
 
