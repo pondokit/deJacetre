@@ -6,7 +6,12 @@
 	<tbody>
 		@foreach($tags as $tag)
 		<?php
-			$delete_button  = '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
+			if ($tag->posts->count()) {
+				$delete_button  = '<button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>';
+			} else {
+				$delete_button  = '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
+			}
+
 		?>
 		<tr>
 			<td>
