@@ -37,7 +37,59 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class=" 
+        <li class="treeview 
+        {{
+          (request()->is('backend/blog')) ||
+          (request()->is('backend/categories')) ||
+          (request()->is('backend/categories/create')) ||
+          (request()->is('backend/categories/*/edit')) ||
+          (request()->is('backend/blog/create')) || 
+          (request()->is('backend/blog/*/edit')) ||
+          (request()->is('backend/tags')) 
+          ? 'active' : '' }}
+        ">
+          <a href="#">
+            <i class="glyphicon glyphicon-pushpin"></i> <span>Posts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
+              <a href=" {{route('blog.create')}} ">
+                <i class="fa fa-circle-o"></i><span>New Post</span>
+              </a>
+            </li>
+
+            <li class=" 
+            {{ 
+              (request()->is('backend/blog')) || 
+              (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+            }} ">
+              <a href="{{ route('blog.index') }}">
+                <i class="fa fa-circle-o"></i><span>All Posts</span>
+              </a>
+            </li>
+
+            @if (check_user_permissions(request(), "Categories@index"))
+            <li class="
+            {{ 
+              (request()->is('backend/categories')) || 
+              (request()->is('backend/categories/create')) || 
+              (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+            }}">
+              <a href="{{ route('categories.index') }}">
+                <i class="fa fa-circle-o"></i><span>Category</span>
+              </a>
+            </li>
+            @endif
+            
+            <li class="{{request()->is('backend/tags') ? 'active' : ''}}">
+              <a href=" {{route('tags.index')}} "><i class="fa fa-circle-o"></i>Tags</a>
+            </li>
+          </ul>
+        </li>
+        {{-- <li class=" 
         {{ 
           (request()->is('backend/blog')) || 
           (request()->is('backend/blog/create')) || 
@@ -46,23 +98,12 @@ $url1 = request()->segment(1);
           <a href="{{ route('blog.index') }}">
             <i class="fa fa-book"></i> <span>All Posts</span>
           </a>
-        </li>
-        @if (check_user_permissions(request(), "Categories@index"))
-        <li class="
-        {{ 
-          (request()->is('backend/categories')) || 
-          (request()->is('backend/categories/create')) || 
-          (request()->is('backend/categories/*/edit')) ? 'active' : '' 
-        }}">
-          <a href="{{ route('categories.index') }}">
-            <i class="fa fa-user"></i> <span>Category</span>
-          </a>
-        </li>
-        @endif
+        </li> --}}
+
         @if (check_user_permissions(request(), "Users@index"))
         <li class="treeview {{ $url2 == 'roles' || $url2 == 'permissions' || $url2 == 'users' ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-users"></i> <span>Manage Users</span>
+            <i class="fa fa-users"></i><span>Manage Users</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -97,7 +138,7 @@ $url1 = request()->segment(1);
           (request()->is('stats/urls'))
         ? 'active' : '' }}">
           <a href="#">
-            <i class="fa fa-bar-chart"></i> <span>Pengunjung</span>
+            <i class="fa fa-bar-chart"></i><span>Pengunjung</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -108,12 +149,12 @@ $url1 = request()->segment(1);
               request()->is('stats/summary') ? 'active' : ''
             }}">
               <a href=" {{route('visitortracker.summary')}} ">
-                <i class="fa fa-circle-o"></i> Summary
+                <i class="fa fa-circle-o"></i>Summary
               </a>
             </li>
             <li  class=" {{ request()->is('stats/all') ? 'active' : '' }} ">
               <a href=" {{route('visitortracker.all_requests')}} ">
-                <i class="fa fa-circle-o"></i> All
+                <i class="fa fa-circle-o"></i>All
               </a>
             </li>
             <li class="
@@ -122,7 +163,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href=" {{route('visitortracker.visits')}} ">
-                <i class="fa fa-circle-o"></i> Visits
+                <i class="fa fa-circle-o"></i>Visits
               </a>
             </li>
             <li class="
@@ -131,7 +172,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href=" {{route('visitortracker.bots')}}">
-                <i class="fa fa-circle-o"></i> Bots
+                <i class="fa fa-circle-o"></i>Bots
               </a>
             </li>
             <li class="
@@ -140,7 +181,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.countries')}}">
-                <i class="fa fa-circle-o"></i> Country
+                <i class="fa fa-circle-o"></i>Country
               </a>
             </li>
             <li class="
@@ -149,7 +190,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.os')}}">
-                <i class="fa fa-circle-o"></i> OS
+                <i class="fa fa-circle-o"></i>OS
               </a>
             </li>
             <li class="
@@ -158,7 +199,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.browsers')}}">
-                <i class="fa fa-circle-o"></i> Browsers
+                <i class="fa fa-circle-o"></i>Browsers
               </a>
             </li>
             <li class="
@@ -167,7 +208,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.languages')}}">
-                <i class="fa fa-circle-o"></i> Languages
+                <i class="fa fa-circle-o"></i>Languages
               </a>
             </li>
             <li class="
@@ -176,7 +217,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.unique')}}">
-                <i class="fa fa-circle-o"></i> Unique
+                <i class="fa fa-circle-o"></i>Unique
               </a>
             </li>
             <li class="
@@ -185,7 +226,7 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.users')}}">
-                <i class="fa fa-circle-o"></i> Users
+                <i class="fa fa-circle-o"></i>Users
               </a>
             </li>
             <li class="
@@ -194,14 +235,14 @@ $url1 = request()->segment(1);
             }}
             ">
               <a href="{{route('visitortracker.urls')}}">
-                <i class="fa fa-circle-o"></i> Url
+                <i class="fa fa-circle-o"></i>Url
               </a>
             </li>
           </ul>
         </li>
         <li class="{{ request()->is('backend/contact') ? 'active' : '' }}">
           <a href="{{ route('contact.index') }}">
-            <i class="fa fa-rss-square"></i> <span>Contact</span>
+            <i class="fa fa-rss-square"></i><span>Contact</span>
           </a>
         </li>
         <li class="
@@ -210,7 +251,7 @@ $url1 = request()->segment(1);
           (request()->is('backend/comments/*/edit')) ? 'active' : ''
         }}">
           <a href="{{ route('comments.index') }}">
-            <i class="fa fa-comment"></i> <span>Comments</span>
+            <i class="fa fa-comment"></i><span>Comments</span>
           </a>
         </li>
 
@@ -221,7 +262,13 @@ $url1 = request()->segment(1);
           (request()->is('backend/gallery/create')) ? 'active' : '' 
         }}">
           <a href="{{ route('gallery.index') }}">
-            <i class="fa fa-picture-o"></i> <span>Gallery</span>
+            <i class="fa fa-picture-o"></i><span>Gallery</span>
+          </a>
+        </li>
+
+        <li class="{{ (request()->is('backend/about')) ? 'active' : '' }}">
+          <a href="{{ route('about.index') }}">
+            <i class="fa fa-info"></i><span>About</span>
           </a>
         </li>
       </ul>

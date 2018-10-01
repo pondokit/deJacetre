@@ -48,7 +48,7 @@
 					&copy;<a href="#">De Jacetre</a> 2017. All right reserved.
 				</div>
 				<div class="social pull-right">
-					<a href=" {{$contact->facebook}} "><i class="fa fa-facebook"></i></a>
+					<a href="{{$contact->facebook}}"><i class="fa fa-facebook"></i></a>
 					<a href="{{$contact->instagram}}"><i class="fa fa-instagram"></i></a>
 					<a href="{{$contact->twitter}}"><i class="fa fa-twitter"></i></a>
 					<a href="{{$contact->github}}"><i class="fa fa-github"></i></a>
