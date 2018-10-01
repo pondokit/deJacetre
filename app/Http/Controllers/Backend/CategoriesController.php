@@ -27,7 +27,7 @@ class CategoriesController extends BackendController
 
         return Datatables::of($categories)
                 ->addColumn('action', function($category) {
-                    $delete_button  = ($category->id == config('cms.default_category_id')) ? '<button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>' : '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
+                      $delete_button  = ($category->id == config('cms.default_category_id') || $category->posts->count()) ? '<button onclick="return false" type="submit" class="btn btn-xs btn-danger disabled"><i class="fa fa-times"></i></button>' : '<button onclick="return confirm('."'Are you sure?'".')" type="submit" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></button>';
 
                     return '<form action="'.route('categories.destroy', $category->id).'" method="post">' . csrf_field() . method_field("DELETE") . '<a href="'.route('categories.edit', $category->id).'" class="btn btn-xs btn-default"><i class="fa fa-edit"></i></a>'. $delete_button .'</form>';
                 })
