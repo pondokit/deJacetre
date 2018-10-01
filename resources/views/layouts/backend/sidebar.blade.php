@@ -10,8 +10,7 @@ $url1 = request()->segment(1);
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-
-          <img src="{{ ($avatar = App\User::find(Auth::user()->id)->image) ? '/image/'.$avatar : Auth::user()->gravatar() }}" />
+          <img src="/image/{{ App\User::find(Auth::user()->id)->image }}" />
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -38,60 +37,28 @@ $url1 = request()->segment(1);
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-
-        <li class="treeview 
-        {{
-          (request()->is('backend/blog')) ||
-          (request()->is('backend/categories')) ||
-          (request()->is('backend/categories/create')) ||
-          (request()->is('backend/categories/*/edit')) ||
+        <li class=" 
+        {{ 
+          (request()->is('backend/blog')) || 
           (request()->is('backend/blog/create')) || 
-          (request()->is('backend/blog/*/edit')) ||
-          (request()->is('backend/tags')) 
-          ? 'active' : '' }}
-        ">
-          <a href="#">
-            <i class="glyphicon glyphicon-pushpin"></i> <span>Posts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+          (request()->is('backend/blog/*/edit')) ? 'active' : '' 
+        }} ">
+          <a href="{{ route('blog.index') }}">
+            <i class="fa fa-book"></i> <span>All Posts</span>
           </a>
-          <ul class="treeview-menu">
-            <li class=" {{request()->is('backend/blog/create') ? 'active' : ''}} ">
-              <a href=" {{route('blog.create')}} ">
-                <i class="fa fa-circle-o"></i><span>New Post</span>
-              </a>
-            </li>
-
-            <li class=" 
-            {{ 
-              (request()->is('backend/blog')) || 
-              (request()->is('backend/blog/*/edit')) ? 'active' : '' 
-            }} ">
-              <a href="{{ route('blog.index') }}">
-                <i class="fa fa-circle-o"></i> <span>All Posts</span>
-              </a>
-            </li>
-
-            @if (check_user_permissions(request(), "Categories@index"))
-            <li class="
-            {{ 
-              (request()->is('backend/categories')) || 
-              (request()->is('backend/categories/create')) || 
-              (request()->is('backend/categories/*/edit')) ? 'active' : '' 
-            }}">
-              <a href="{{ route('categories.index') }}">
-                <i class="fa fa-circle-o"></i> <span>Category</span>
-              </a>
-            </li>
-            @endif
-            
-            <li class="{{request()->is('backend/tags') ? 'active' : ''}}">
-              <a href=" {{route('tags.index')}} "><i class="fa fa-circle-o"></i>Tags</a>
-            </li>
-          </ul>
         </li>
-
+        @if (check_user_permissions(request(), "Categories@index"))
+        <li class="
+        {{ 
+          (request()->is('backend/categories')) || 
+          (request()->is('backend/categories/create')) || 
+          (request()->is('backend/categories/*/edit')) ? 'active' : '' 
+        }}">
+          <a href="{{ route('categories.index') }}">
+            <i class="fa fa-user"></i> <span>Category</span>
+          </a>
+        </li>
+        @endif
         @if (check_user_permissions(request(), "Users@index"))
         <li class="treeview {{ $url2 == 'roles' || $url2 == 'permissions' || $url2 == 'users' ? 'active' : '' }}">
           <a href="#">
@@ -246,9 +213,15 @@ $url1 = request()->segment(1);
             <i class="fa fa-comment"></i> <span>Comments</span>
           </a>
         </li>
-        <li class="{{ (request()->is('backend/about')) ? 'active' : '' }}">
-          <a href="{{ route('about.index') }}">
-            <i class="fa fa-info"></i> <span>About</span>
+
+        <li class="  
+        {{ 
+          (request()->is('backend/gallery')) || 
+          (request()->is('backend/gallery/*/edit')) || 
+          (request()->is('backend/gallery/create')) ? 'active' : '' 
+        }}">
+          <a href="{{ route('gallery.index') }}">
+            <i class="fa fa-picture-o"></i> <span>Gallery</span>
           </a>
         </li>
       </ul>

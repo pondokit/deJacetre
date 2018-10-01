@@ -16,11 +16,6 @@ Route::get('/', [
 	'as' 	=> 'blog'
 ]);
 
-Route::get('/contact', [
-	'uses' 	=> 'BlogController@contact',
-	'as' 	=> 'contact'
-]);
-
 Route::get('/blog/{post}', [
 	'uses' 	=> 'BlogController@show',
 	'as' 	=> 'blog.post'
@@ -116,29 +111,12 @@ Route::put('/backend/contact', [
 	'uses'	=> 'Backend\ContactController@update',
 	'as'	=> 'contact.update'
 ]);
-Route::resource('/backend/comments', 'Backend\CommentsController');
+Route::resource('/backend/comments', 'Backend\CommentsController');	
 
-Route::get('backend/about', [
-	'uses'	=>	'Backend\AboutController@index',
-	'as'	=>	'about.index'
-]);
-
-Route::put('backend/about', [
-	'uses'	=>	'Backend\AboutController@update',
-	'as'	=>	'about.update'
+Route::get('/gallery', [
+	'uses' => 'GalleryController@index',
+	'as' => 'gallery'
 ]);
 
-Route::get('/about', [
-	'uses'	=>	'BlogController@about',
-	'as'	=>	'about'
-]);
-Route::resource('/backend/tags', 'Backend\TagsController');
-Route::get('/register', [
-	'uses'	=> 'Auth\RegisterController@register',
-	'as'	=> 'register.create'
-]);
+Route::resource('/backend/gallery', 'Backend\GalleryController');	
 
-Route::post('/register', [
-	'uses'	=> 'Auth\RegisterController@store',
-	'as'	=> 'register.store'
-]);
