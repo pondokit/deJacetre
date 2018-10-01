@@ -18,7 +18,7 @@ class PermissionsController extends BackendController
      */
     public function index()
     {
-        $permissions = Permission::all();
+        $permissions = Permission::paginate(2);
         return view('backend.permissions.index', compact('permissions'));
     }
 

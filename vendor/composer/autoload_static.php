@@ -450,6 +450,8 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
     );
 
     public static $classMap = array (
+        'AboutTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AboutTableSeeder.php',
+        'App\\About' => __DIR__ . '/../..' . '/app/About.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -459,6 +461,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\Backend\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/AboutController.php',
         'App\\Http\\Controllers\\Backend\\BackendController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BackendController.php',
         'App\\Http\\Controllers\\Backend\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/BlogController.php',
         'App\\Http\\Controllers\\Backend\\CategoriesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/CategoriesController.php',
@@ -507,6 +510,7 @@ class ComposerStaticInit07bc95cbfe501f776c72af57fb2b4df3
         'App\\Sosmed' => __DIR__ . '/../..' . '/app/Sosmed.php',
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\Views\\Composers\\CommentComposer' => __DIR__ . '/../..' . '/app/Views/Composers/CommentComposer.php',
         'App\\Views\\Composers\\CustomComposer' => __DIR__ . '/../..' . '/app/Views/Composers/CustomComposer.php',
         'App\\Views\\Composers\\GlobalComposer' => __DIR__ . '/../..' . '/app/Views/Composers/GlobalComposer.php',
         'App\\Views\\Composers\\NavigationComposer' => __DIR__ . '/../..' . '/app/Views/Composers/NavigationComposer.php',

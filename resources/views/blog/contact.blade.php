@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('contact', 'active')
 
 @section('content')
@@ -66,6 +65,7 @@
 	<!-- Sidebar Closer -->
 
 </div><!-- Main Closer -->
+
 
 @endsection
 
