@@ -40,7 +40,6 @@ class DummySeeder extends Seeder
     		$posts[] = [
     			'author_id'      => 6,
     			'title'          => $faker->sentence(rand(8, 12)),
-    			// 'excerpt'        => $faker->text(rand(250, 300)),
     			'body'           => $faker->paragraphs(rand(10, 15), true),
     			'slug'           => $faker->slug(),
     			'image'          => $image,
