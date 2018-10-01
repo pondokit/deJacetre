@@ -16,7 +16,7 @@
         <div class="caption head">
           <h2 class="title">About Moi</h2>
         </div>
-        <div class="caption">
+        <div style="margin:45px 20px 10px 20px;">
             <p>{!! $about->about_html !!}</p>
         </div>
       </div>
