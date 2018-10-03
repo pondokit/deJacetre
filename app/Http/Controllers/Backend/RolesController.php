@@ -127,6 +127,13 @@ class RolesController extends BackendController
      */
     public function update(Requests\RoleUpdateRequest $request, $id)
     {
+      if ( ! File::exists(public_path().'/image/') ) {
+        File::makeDirectory(public_path().'/image/', 777, true);
+      }
+
+      $gambar = str_random(10).".png";
+      Avatar::create($request->name)->save("image/".$gambar);
+      
         $request->merge([
             'name' => strtolower($request->name),
             'display_name' => title_case($request->name),

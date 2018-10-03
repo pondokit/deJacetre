@@ -26,7 +26,7 @@
 
       {!! Form::model($user, [
         'method'  => 'PUT',
-        'url'     => '/edit-account',
+        'route'   => ['users.update', $user->id],
         'id'      => 'user-form'
       ]) !!}
 

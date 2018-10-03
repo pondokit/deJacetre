@@ -81,11 +81,10 @@ class UsersController extends BackendController
     public function store(Requests\UserStoreRequest $request)
     {
 
-        if (File::exists('/image/')) {
-          Storage::makeDirectory('/image/', 777, true);
-        } else {
-          File::makeDirectory(public_path().'/image/');
+        if ( ! File::exists(public_path().'/image/') ) {
+          File::makeDirectory(public_path().'/image/', 777, true);
         }
+
         //avatar
         $gambar = str_random(10).".png";
         Avatar::create($request->name)->save("image/".$gambar);
@@ -146,6 +145,10 @@ class UsersController extends BackendController
      */
     public function update(Requests\UserUpdateRequest $request, $id)
     {
+      if ( ! File::exists(public_path().'/image/') ) {
+        File::makeDirectory(public_path().'/image/', 777, true);
+      }
+
         if (empty($request->password)){
             unset($request['password']);
         } else {

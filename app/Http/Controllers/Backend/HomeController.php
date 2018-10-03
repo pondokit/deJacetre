@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Laravolt\Avatar\Facade as Avatar;
 use App\User;
+use Illuminate\Support\Facades\Storage;
+use File;
 
 class HomeController extends BackendController
 {
